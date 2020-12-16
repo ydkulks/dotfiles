@@ -19,6 +19,7 @@ filetype plugin indent on    " required
 
 "==============CUSTOM SETTINGS===========
 set number
+set relativenumber  
 "prints out characters in terminal before opening Vim
 "echo '(>^.^<)'
 "echo ' [¬º-°]¬'
@@ -55,4 +56,5 @@ nmap <up> ddkP
 "down arrow key will move cursor line downward
 nmap <down> ddp
 nmap <c-z> <esc>:undo<enter>
+imap <tab> <esc>
 
