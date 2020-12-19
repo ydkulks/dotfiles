@@ -1,6 +1,6 @@
 #Following code are custome
 source ~/.mycommand.sh;
-#export DISPLAY=localhost:0.0;
+export DISPLAY=localhost:0.0;
 bold=$(tput bold);
 grey=$(tput setaf 240);
 blue=$(tput setaf 27);
