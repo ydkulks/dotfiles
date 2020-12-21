@@ -63,14 +63,14 @@ function webproject(){
 
 
 #For printing the process of shell automation in terminal
-function auto_process(){
+function process(){
     echo '1)Create a dot(.) file in ~/ directory.Ex:- .mycommand.sh' $1
     echo '2)Write required function with #!/bin/bash line at the top'
     echo '3)Type ~/.<filename>.sh in .bashrc file'
     echo '4)Access the required function through terminal to automate the function'
 }
 
-function codeTime(){
+function home(){
 	#echo 'Teleporting to CODE_BASE...'
 	#cd /mnt/e/
 }
