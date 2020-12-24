@@ -1,0 +1,2 @@
+.mode column --prints output column wise
+.headers on  --displays header of the column
