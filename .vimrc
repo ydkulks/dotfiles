@@ -45,16 +45,28 @@ set completeopt+=menuone,longest
 " them.
 set matchpairs+=<:>
 set ttyfast
-
+"Setting leader key
+let mapleader = ","
 
 "============KEY BINDINGS=============
 inoremap {<cr> {<cr>}<c-o><s-o
 inoremap [<cr> [<cr>]<c-o><s-o
 inoremap (<cr> (<cr>)<c-o><s-o
 "up arrow key will move current line upward
-nmap <up> ddkP 
+nnoremap <up> ddkP   
 "down arrow key will move cursor line downward
-nmap <down> ddp
-nmap <c-z> <esc>:undo<enter>
-imap <tab> <esc>
-
+nnoremap <down> ddp 
+"Undo
+nnoremap <c-z> <esc>:undo<enter>
+"Esc alias
+""inoremap <leader><tab> <esc>  
+inoremap <leader>jk <esc>
+"Open vertical terminal
+nnoremap <leader>v :vert term <enter>
+"Opens current file in vertical screen
+nnoremap <leader>ev :vsplit <enter>
+""nnoremap <leader>sv :source $MYVIMRC<cr>
+"puts the word in double-quotes
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+nnoremap <leader>H ^
+nnoremap <leader>L $
