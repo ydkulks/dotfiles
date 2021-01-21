@@ -2,6 +2,7 @@
 alias ls='ls -F --color=none'
 alias rm='rm -v'
 source ~/.mycommand.sh;
+source ~/.mypkg.sh;
 export DISPLAY=localhost:0.0;
 bold=$(tput bold);
 grey=$(tput setaf 240);
