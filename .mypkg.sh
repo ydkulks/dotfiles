@@ -11,4 +11,5 @@ function my_pkg()
     #sudo apt-get install node.js
     #sudo apt-get install mono-runtime
     #sudo apt-get install mono-mcs
+    #sudo apt-get install ffmpeg
 }
