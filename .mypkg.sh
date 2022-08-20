@@ -12,4 +12,5 @@ function my_pkg()
     #sudo apt-get install mono-runtime
     #sudo apt-get install mono-mcs
     #sudo apt-get install ffmpeg
+    #sudo apt-get install tree
 }
