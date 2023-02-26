@@ -11,6 +11,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-scripts/AutoComplPop'
 "Plugin for displaying directories
 Plugin 'preservim/nerdtree'
+"Prettier plugin for file formatting (usage--> :Prettier)
+Plugin 'prettier/vim-prettier'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
