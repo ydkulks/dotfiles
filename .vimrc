@@ -1,74 +1,127 @@
-"================VUNDLE PLUGIN MANAGER==============
-set nocompatible              " be iMproved, required
-filetype off                  " required
+"================VIM-PLUG==============
+set encoding=UTF-8
+filetype off
+let g:coc_disable_startup_warning = 1
+call plug#begin()
+"
+""Plugin for displaying directories
+Plug 'preservim/nerdtree'
+""Plugin for commenting
+Plug 'preservim/nerdcommenter'
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+""Plugin for Prettier
+Plug 'prettier/vim-prettier',{'branch':'release/0.x'}
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-"Plugin for autocomplete by vim
-Plugin 'vim-scripts/AutoComplPop'
-"Plugin for displaying directories
-Plugin 'preservim/nerdtree'
-"Prettier plugin for file formatting (usage--> :Prettier)
-Plugin 'prettier/vim-prettier'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+""Colorscheme 
+"Bundle 'bzx/vim-theme-pack'
+Plug 'dracula/vim',{'as':'dracula'}
+
+""Coc autocompletion 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+""Vim-tmux
+Plug 'christoomey/vim-tmux-navigator'
+
+""Dev icons
+Plug 'ryanoasis/vim-devicons'
+
+call plug#end()            " required
 filetype plugin indent on    " required
+filetype plugin on          "required for COC
+
+""Coc config for snippets
+let g:coc_global_extensions = [
+    \ 'coc-pairs',
+    \ 'coc-html',
+    \ 'coc-css',
+    \ 'coc-tsserver',
+    \ 'coc-json',
+    \ 'coc-emmet',
+    \]
+"Mapping selectConfirm() to Tab to select emmet
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : coc#_select_confirm()
+
+""Prettier config
+"nnoremap <leader>p :Prettier
+let g:prettier#autoformat=1
+let g:prettier#autoformat_require_pragma=0
+
+"" NerdTree config to show .dot files
+let NERDTreeShowHidden=1
 
 
+ "==============CUSTOM SETTINGS===========
+ set number
+ set relativenumber  
+ "colors murphy
+ "colors low
+ colors molokai
+ "colorscheme dracula
+ set showcmd
+ set smartindent
+ set tabstop=2
+ set shiftwidth=2
+ set expandtab
+ set complete+=kspell
+ set autoindent
+ set linebreak
+ syntax enable
+ set laststatus=2
+ set cursorline
+ set title
+ set spell
+ set cursorline
+ set completeopt+=menuone,longest
+ "for folding/hiding lines of code/text
+ set foldmethod=indent
 
-"==============CUSTOM SETTINGS===========
-set number
-set relativenumber  
-"prints out characters in terminal before opening Vim
-"echo '(>^.^<)'
-"echo ' [¬º-°]¬'
-"echo '(~‾°‾)~'
-"echo 'ʕ•ᴥ•ʔ'
-colors darkblue
-colors low
-set smartindent
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set complete+=kspell
-set autoindent
-set linebreak
-syntax enable
-set laststatus=2
-set cursorline
-set title
-set spell
-set cursorline
-set completeopt+=menuone,longest
-" Highlight matching pairs of brackets. Use the '%' character to jump between
-" them.
-set matchpairs+=<:>
-set ttyfast
-"Setting leader key
-let mapleader = ","
+ ""scrolling with mouse
+ ""set mouse=a
+ ""map <ScrollWheelUp> <C-Y>
+ ""map <ScrollWheelDown> <C-E>
 
-"============KEY BINDINGS=============
-inoremap {<cr> {<cr>}<c-o><s-o
-inoremap [<cr> [<cr>]<c-o><s-o
-inoremap (<cr> (<cr>)<c-o><s-o
-"up arrow key will move current line upward
-nnoremap <up> ddkP   
-"down arrow key will move cursor line downward
-nnoremap <down> ddp 
-"Undo
-nnoremap <c-z> <esc>:undo<enter>
-"Esc alias
-""inoremap <leader><tab> <esc>  
-inoremap <leader>jk <esc>
-"Open vertical terminal
-nnoremap <leader>v :vert term <enter>
-"Opens current file in vertical screen
-nnoremap <leader>ev :vsplit <enter>
-""nnoremap <leader>sv :source $MYVIMRC<cr>
-"puts the word in double-quotes
-nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
-nnoremap <leader>H ^
-nnoremap <leader>L $
+ " Highlight matching pairs of brackets. Use the '%' character to jump
+ "between them.
+ set matchpairs+=<:>
+ set ttyfast
+ "Setting leader key
+ let mapleader = ","
+
+ "============KEY BINDINGS=============
+ inoremap {<cr> {<cr>}<c-o><s-o
+ inoremap [<cr> [<cr>]<c-o><s-o
+ inoremap (<cr> (<cr>)<c-o><s-o
+ "up arrow key will move current line upward
+ nnoremap <up> ddkP   
+ "down arrow key will move cursor line downward
+ nnoremap <down> ddp 
+ "Undo
+ nnoremap <c-z> <esc>:undo<enter>
+ "Esc alias
+ inoremap <leader>jk <esc>
+"VISUAL BLOCK not working
+ nnoremap <leader>v <c-v>
+ "puts the word in double-quotes
+ nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+ nnoremap <leader>H ^
+ nnoremap <leader>L $
+ "if foldmethod=manual, select lines in VISUAL mode and fold/hide it
+ "Go to ~/.vim/view/ to see views created by :mkview
+ "To load the view :loadview
+""Default to open all folds
+au BufRead * normal zR
+nnoremap <leader>f za
+nnoremap <leader>FF zR
+nnoremap <leader>F zM
+"vnoremap <leader>f zf
+
+"scroll screen using j&k 
+nnoremap J <c-e>
+nnoremap K <c-y>
+
+"Toggle nerdtree 
+nnoremap N :NERDTreeToggle<enter>
+
+"80 character column limit
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
