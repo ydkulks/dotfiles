@@ -25,6 +25,9 @@ Plug 'christoomey/vim-tmux-navigator'
 ""Dev icons
 Plug 'ryanoasis/vim-devicons'
 
+""Indent line
+Plug 'Yggdroot/indentLine'
+
 call plug#end()            " required
 filetype plugin indent on    " required
 filetype plugin on          "required for COC
@@ -49,6 +52,9 @@ let g:prettier#autoformat_require_pragma=0
 "" NerdTree config to show .dot files
 let NERDTreeShowHidden=1
 
+""Indent Line config
+let g:indentLine_enable = 1
+let g:indentLine_char = '┊'
 
  "==============CUSTOM SETTINGS===========
  set number
