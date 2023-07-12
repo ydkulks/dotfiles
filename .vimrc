@@ -14,7 +14,8 @@ Plug 'prettier/vim-prettier',{'branch':'release/0.x'}
 
 ""Colorscheme 
 "Bundle 'bzx/vim-theme-pack'
-Plug 'dracula/vim',{'as':'dracula'}
+"Plug 'dracula/vim',{'as':'dracula'}
+Plug 'drewtempelmeyer/palenight.vim'
 
 ""Coc autocompletion 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -27,6 +28,12 @@ Plug 'ryanoasis/vim-devicons'
 
 ""Indent line
 Plug 'Yggdroot/indentLine'
+
+""Git diff marks
+Plug 'airblade/vim-gitgutter'
+
+""React snippets
+Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
 
 call plug#end()            " required
 filetype plugin indent on    " required
@@ -53,16 +60,18 @@ let g:prettier#autoformat_require_pragma=0
 let NERDTreeShowHidden=1
 
 ""Indent Line config
-let g:indentLine_enable = 1
-let g:indentLine_char = '┊'
+"let g:indentLine_enable = 1
+"let g:indentLine_char = '┊'
 
  "==============CUSTOM SETTINGS===========
  set number
  set relativenumber  
+ set background=dark
  "colors murphy
  "colors low
- colors molokai
+ "colors molokai
  "colorscheme dracula
+ colorscheme palenight
  set showcmd
  set smartindent
  set tabstop=2
@@ -81,15 +90,12 @@ let g:indentLine_char = '┊'
  "for folding/hiding lines of code/text
  set foldmethod=indent
 
- ""scrolling with mouse
- ""set mouse=a
- ""map <ScrollWheelUp> <C-Y>
- ""map <ScrollWheelDown> <C-E>
-
  " Highlight matching pairs of brackets. Use the '%' character to jump
  "between them.
  set matchpairs+=<:>
  set ttyfast
+ "set listchars=tab:\|\ 
+ "set list
  "Setting leader key
  let mapleader = ","
 
@@ -131,3 +137,8 @@ nnoremap N :NERDTreeToggle<enter>
 "80 character column limit
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
+
+ ""scrolling with mouse
+set mouse=a
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
