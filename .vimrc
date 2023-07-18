@@ -35,6 +35,10 @@ Plug 'airblade/vim-gitgutter'
 ""React snippets
 Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
 
+""JSX & TSX syntax highlight
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+
 call plug#end()            " required
 filetype plugin indent on    " required
 filetype plugin on          "required for COC
@@ -63,6 +67,9 @@ let NERDTreeShowHidden=1
 ""Indent Line config
 "let g:indentLine_enable = 1
 "let g:indentLine_char = '┊'
+
+""JSX & TSX syntax highlight
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 
  "==============CUSTOM SETTINGS===========
  set number
