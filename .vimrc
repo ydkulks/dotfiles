@@ -49,7 +49,8 @@ let g:coc_global_extensions = [
     \ 'coc-emmet',
     \]
 "Mapping selectConfirm() to Tab to select emmet
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : coc#_select_confirm()
+"inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : coc#_select_confirm()
+inoremap <silent><expr> <Tab> coc#pum#visible() && coc#pum#info()['index'] != -1 ? coc#pum#confirm() : "\<C-g>u\<CR>"
 
 ""Prettier config
 "nnoremap <leader>p :Prettier
