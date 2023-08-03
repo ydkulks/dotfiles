@@ -1,3 +1,32 @@
+"======VIM-KEY-BINDINGS-REFERENCE======
+"
+" <leader> = ','
+"
+" KEY           MODE      USE
+" ---------     -------   ---------------
+" <leader>jk    INSERT    Switch to NORMAL
+" <up>          NORMAL    Move line up
+" <down>        NORMAL    Move line down
+" <c-z>         NORMAL    Undo
+" <leader>v     NORMAL    Visual Block
+" <leader>H     NORMAL    Move cursor to beginning of line
+" <leader>L     NORMAL    Move cursor to end of line
+" <leader>Y     NORMAL    Scroll up
+" <leader>J     NORMAL    Scroll down
+" <leader>f     NORMAL    Toggle fold of indented lines
+" <leader>F     NORMAL    Fold all indented lines
+" <leader>FF    NORMAL    Unfold all indented lines
+"
+" N             NORMAL    NERDTreeToggle
+" <Tab>         NORMAL    CoC (Select emmet)
+" <leader>r     NORMAL    CoC (Code references [Definition])
+" <leader>rn    NORMAL    CoC (Rename all occurrence)
+" <leader>p     NORMAL    Prettier formatter
+" <c-p>         NORMAL    Fuzzy Finder (folder)
+" <c-g>         NORMAL    Fuzzy Finder (buffer)
+" <c-m>         NORMAL    Fuzzy Finder (mixed)
+" <C-c>         VISUAL    Copy to Windows clipboard (WSL)
+"
 "================VIM-PLUG==============
 set encoding=UTF-8
 filetype off
@@ -33,12 +62,20 @@ Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 
 ""React snippets
-Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
+Plug 'dsznajder/vscode-es7-javascript-react-snippets', 
+      \{ 'do': 'yarn install --frozen-lockfile && yarn compile' }
 
 ""JSX & TSX syntax highlight
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 
+""Fuzzy Finder
+Plug 'ctrlpvim/ctrlp.vim'
+
+""Git in vim 
+Plug 'tpope/vim-fugitive'
+
+"================VIM-PLUG-CONFIGURATION==============
 call plug#end()            " required
 filetype plugin indent on    " required
 filetype plugin on          "required for COC
@@ -52,12 +89,8 @@ let g:coc_global_extensions = [
     \ 'coc-json',
     \ 'coc-emmet',
     \]
-"Mapping selectConfirm() to Tab to select emmet
-"inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : coc#_select_confirm()
-inoremap <silent><expr> <Tab> coc#pum#visible() && coc#pum#info()['index'] != -1 ? coc#pum#confirm() : "\<C-g>u\<CR>"
 
 ""Prettier config
-"nnoremap <leader>p :Prettier
 let g:prettier#autoformat=1
 let g:prettier#autoformat_require_pragma=0
 
@@ -65,11 +98,12 @@ let g:prettier#autoformat_require_pragma=0
 let NERDTreeShowHidden=1
 
 ""Indent Line config
-"let g:indentLine_enable = 1
-"let g:indentLine_char = '┊'
-
-""JSX & TSX syntax highlight
+let g:indentLine_enable = 1
+let g:indentLine_char = '┊'
+"
+""TSX & JSX syntax highlight
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+
 
  "==============CUSTOM SETTINGS===========
  set number
@@ -104,6 +138,13 @@ autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
  set ttyfast
  "set listchars=tab:\|\ 
  "set list
+
+"Undo history in a file
+if has('persistant_undo')
+  set undodir=$HOME/.vim/undo
+  set undofile
+endif
+
  "Setting leader key
  let mapleader = ","
 
@@ -116,13 +157,15 @@ autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
  "down arrow key will move cursor line downward
  nnoremap <down> ddp 
  "Undo
- nnoremap <c-z> <esc>:undo<enter>
+ nnoremap <C-Z> <esc>:undo<CR>
+ "Redo
+ "nnoremap <C-S-Z> <esc>:redo<CR>
  "Esc alias
  inoremap <leader>jk <esc>
 "VISUAL BLOCK not working
  nnoremap <leader>v <c-v>
  "puts the word in double-quotes
- nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+ "nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
  nnoremap <leader>H ^
  nnoremap <leader>L $
  "if foldmethod=manual, select lines in VISUAL mode and fold/hide it
@@ -139,14 +182,45 @@ nnoremap <leader>F zM
 nnoremap J <c-e>
 nnoremap K <c-y>
 
-"Toggle nerdtree 
-nnoremap N :NERDTreeToggle<enter>
-
 "80 character column limit
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+highlight OverLength ctermbg=0 ctermfg=1
 match OverLength /\%81v.\+/
+"set colorcolumn=100
+"highlight ColorColumn ctermbg=0 guibg=Black
 
  ""scrolling with mouse
 set mouse=a
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
+
+""Copy to Windows clipboard
+"Copy selected only
+vnoremap <C-c> y:!echo <C-r>=escape(substitute(shellescape(getreg('"')), '\n', 
+      \'\r', 'g'), '#%!')<CR> <Bar> clip.exe<CR><CR>
+"Copy whole line
+"vnoremap <C-c> ::w !clip.exe<CR><CR>
+
+"============PLUGIN KEY BINDINGS=============
+""Toggle nerdtree 
+nnoremap N :NERDTreeToggle<enter>
+
+""Mapping Tab to select emmet (CoC)
+"inoremap <expr> <Tab> coc#pum#visible() ? '\<CR>' : coc#pum#confirm()
+inoremap <silent><expr> <Tab> coc#pum#visible() && 
+      \coc#pum#info()['index'] != -1 ? coc#pum#confirm() : "\<C-g>u\<CR>"
+
+""CoC
+nmap <leader>r <Plug>(coc-references-used)
+nmap <leader>rn <Plug>(coc-rename)
+
+""Prettier
+nnoremap <leader>p :Prettier
+
+""fuzzy finder
+"press CtrlC to exit
+"File
+nnoremap <c-p> :CtrlP<enter>
+"Buffer
+nnoremap <c-g> :CtrlPBuffer<enter>
+"Mixed
+nnoremap <c-m> :CtrlPMixed<enter>
