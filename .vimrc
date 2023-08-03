@@ -104,6 +104,8 @@ let g:indentLine_char = '┊'
 ""TSX & JSX syntax highlight
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 
+""CtrlP config
+let g:ctrlp_show_hidden=1
 
  "==============CUSTOM SETTINGS===========
  set number
