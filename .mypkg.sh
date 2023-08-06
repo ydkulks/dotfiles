@@ -5,6 +5,7 @@ function my_pkg()
     echo 'Installing packages' $1
     echo '==================='
     sudo apt update
+		#sudo apt-get install build-essentials
     #sudo apt-get install python-pip
     #sudo apt-get install python3
     #pip3 install numpy
@@ -13,4 +14,5 @@ function my_pkg()
     #sudo apt-get install mono-mcs
     #sudo apt-get install ffmpeg
     #sudo apt-get install tree
+		#sudo apt-get install ripgrep #Requirement for telescope.nvim
 }
