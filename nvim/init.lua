@@ -1,0 +1,5 @@
+require("yd")
+vim.cmd('autocmd BufRead,BufWinEnter * normal! zR')
+--vim.cmd('highlight ColorColumn ctermbg=0 ctermfg=1')
+vim.cmd(':highlight Cursor guibg=gray ctermbg=black')
+--print('Hello from init.lua')
