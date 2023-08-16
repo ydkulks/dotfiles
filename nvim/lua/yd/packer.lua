@@ -18,7 +18,7 @@ return require('packer').startup({function(use)
 	use {
 		'neoclide/coc.nvim',
 		branch = 'release',
-		run = ':CocInstall coc-pairs coc-html coc-css coc-tsserver coc-json coc-emmet coc-prettier'
+		run = ':CocInstall coc-pairs coc-html coc-css coc-tsserver coc-json coc-emmet coc-prettier @yaegassy/coc-tailwindcss3'
 	}
 	use {'tpope/vim-fugitive'}
 	use 'christoomey/vim-tmux-navigator'
@@ -27,6 +27,9 @@ return require('packer').startup({function(use)
 	use 'nvim-tree/nvim-web-devicons'
 	use 'nvim-tree/nvim-tree.lua'
 	use 'Yggdroot/indentLine'
+	use 'tpope/vim-commentary'
+	--use 'mfussenegger/nvim-dap'
+	--use 'rcarriga/nvim-dap-ui'
 	--	use {
 		--		'VonHeikemen/lsp-zero.nvim',
 		--		branch = 'v2.x',

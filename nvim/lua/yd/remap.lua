@@ -34,6 +34,8 @@ vim.keymap.set("n","L", '$')
 vim.keymap.set("n","J", '<c-e>')
 vim.keymap.set("n","K", '<c-y>')
 --vim.cmd [[autocmd VimEnter * set foldlevel=0 ]]
+--vim.keymap.set("n","<leader>f",'zc')
+--vim.keymap.set("n","<leader>F",'zo')
 
 --Selected lines move up or down
 vim.keymap.set("v","J",":m '>+1<CR>gv=gv")
