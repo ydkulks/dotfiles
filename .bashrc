@@ -1,6 +1,6 @@
-#################### Following code are custome ################################
+################### Following code are custome ################################
 export TERM=xterm-256color
-alias ls='ls -F --color=none'
+##alias ls='ls -F --color=none'
 alias rm='rm -v'
 ##source ~/.mycommand.sh;
 ##source ~/.mypkg.sh;
@@ -22,4 +22,6 @@ PS1+="\[${reset}\]";
 export PS1;
 
 export NVM_DIR="$HOME/.nvm"
-
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+. "$HOME/.cargo/env"

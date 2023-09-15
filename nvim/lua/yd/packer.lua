@@ -7,6 +7,7 @@ return require('packer').startup({function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 	use 'drewtempelmeyer/palenight.vim'
+	-- use 'ellisonleao/gruvbox.nvim'
 	-- Post-install/update hook with neovim command
 	use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate' })
 
@@ -18,7 +19,7 @@ return require('packer').startup({function(use)
 	use {
 		'neoclide/coc.nvim',
 		branch = 'release',
-		run = ':CocInstall coc-pairs coc-html coc-css coc-tsserver coc-json coc-emmet coc-prettier @yaegassy/coc-tailwindcss3'
+		run = ':CocInstall coc-pairs coc-html coc-css coc-tsserver coc-json coc-emmet coc-prettier @yaegassy/coc-tailwindcss3 coc-markdownlint coc-go'
 	}
 	use {'tpope/vim-fugitive'}
 	use 'christoomey/vim-tmux-navigator'
@@ -28,6 +29,9 @@ return require('packer').startup({function(use)
 	use 'nvim-tree/nvim-tree.lua'
 	use 'Yggdroot/indentLine'
 	use 'tpope/vim-commentary'
+	use 'mbbill/undotree'
+	use 'ThePrimeagen/harpoon'
+	use 'ThePrimeagen/vim-be-good'
 	--use 'mfussenegger/nvim-dap'
 	--use 'rcarriga/nvim-dap-ui'
 	--	use {
