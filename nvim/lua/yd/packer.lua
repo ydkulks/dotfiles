@@ -9,7 +9,13 @@ return require('packer').startup({function(use)
 	use 'drewtempelmeyer/palenight.vim'
 	-- use 'ellisonleao/gruvbox.nvim'
 	-- Post-install/update hook with neovim command
-	use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate' })
+	-- use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate' })
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		run = ':TSUpdate',
+		branch = 'master',
+		tag = 'v0.8.5.2'
+	}
 
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.2',
@@ -32,6 +38,18 @@ return require('packer').startup({function(use)
 	use 'mbbill/undotree'
 	use 'ThePrimeagen/harpoon'
 	use 'ThePrimeagen/vim-be-good'
+	use {
+		'pwntester/octo.nvim',
+		requires = {
+			'nvim-lua/plenary.nvim',
+			'nvim-telescope/telescope.nvim',
+			'nvim-tree/nvim-web-devicons',
+		},
+		config = function ()
+			require"octo".setup()
+		end
+	}
+	use '/home/yd/Projects/speedster.nvim'
 	--use 'mfussenegger/nvim-dap'
 	--use 'rcarriga/nvim-dap-ui'
 	--	use {

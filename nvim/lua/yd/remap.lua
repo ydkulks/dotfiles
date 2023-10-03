@@ -57,5 +57,12 @@ vim.cmd('command! -nargs=0 NoEng :setlocal spell spelllang=')
 vim.cmd('command! -nargs=0 Eng :setlocal spell spelllang=en_us')
 
 vim.keymap.set('n','N',':NvimTreeToggle<CR>')
-vim.cmd("let g:indentLine_char = '┊'")
---print('Hello from remap!')
+-- vim.cmd("let g:indentLine_char = '┊'")
+vim.cmd("let g:indentLine_char = '⋅'")
+
+-- Mapped for testing lua plugins
+vim.keymap.set("n","<leader>t",'<Plug>PlenaryTestFile')
+
+-- <F2> --> Open neovim config
+vim.keymap.set("n","<F2>",":e ~/.config/nvim/<CR>")
+

@@ -1,0 +1,81 @@
+-- Vim statusbar config
+--[[
+local function git_branch()
+    local branch = vim.fn.system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+    if string.len(branch) > 0 then
+      return branch
+    else
+      return ""
+    end
+end
+]]
+
+-- Temp Vim statusbar config
+local function vim_mode()
+	local mode =vim.api.nvim_get_mode().mode
+	if mode == 'n' then
+		return 'NORMAL'
+	elseif mode == 'v' then
+		return 'VISUAL'
+	elseif mode == 'V' then
+		return 'V-LINE'
+	elseif mode == '<CTRL-V>' then
+		return 'V-BLOCK'
+	elseif mode == 'i' then
+		return 'INSERT'
+	elseif mode == 'R' then
+		return 'REPLACE'
+	elseif mode == 'c' then
+		return 'COMMAND'
+	elseif mode == 's' then
+		return 'SELECT'
+	else
+		-- return 'UNKNOWN'
+		return mode
+	end
+end
+
+vim.cmd("set laststatus=3") -- Global statusbar
+vim.cmd("set noshowmode") -- Disable display of mode in cmd mode line
+
+local function update_statusline()
+	local set_color_0 = "%#DiffAdd#"
+	local set_color_0_1 = "%#String#"
+  local set_color_1 = "%#DiagnosticHint#"
+	local mode = vim_mode()
+  local set_color_2 = "%#@comment#"
+  local file_name = " %f"
+  local modified = "%m"
+  local align_right = "%="
+  local filetype = " %y"
+  local percentage = " %p%%"
+  local linecol = " %l:%c"
+
+  local statubar_str = string.format(
+    "%s %s %s%s%s%s %s%s%s%s%s%s",
+		set_color_0,
+		mode,
+		set_color_0_1,
+    '',
+		set_color_1,
+    file_name,
+    modified,
+		set_color_2,
+    align_right,
+    percentage,
+    linecol,
+    filetype
+  )
+	return statubar_str
+end
+-- vim.opt.statusline = update_statusline()
+
+-- Autocommand to run on mode change
+-- :au BufEnter
+local group = vim.api.nvim_create_augroup("VimModeRefresh", {clear = true})
+vim.api.nvim_create_autocmd({"ModeChanged","BufEnter"}, {
+	callback = function ()
+		vim.opt.statusline = update_statusline()
+	end,
+	group = group
+})
