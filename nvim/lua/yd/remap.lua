@@ -1,3 +1,4 @@
+local vim = vim
 --To enable mode shapes, "Cursor" highlight, and blinking:
 vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
 -- vim.cmd(':hi Cursor gui=NONE guifg=bg guibg=fg')
@@ -13,7 +14,10 @@ vim.cmd('set shiftwidth=2')
 vim.cmd('syntax enable')
 vim.cmd('set cursorline')
 vim.cmd('set foldmethod=indent')
-vim.cmd('set matchpairs+=<:>')
+-- vim.cmd('set foldmethod=expr')
+-- vim.cmd('set foldexpr=nvim_tresitter#foldexpr()')
+vim.cmd('set nofoldenable')
+-- vim.cmd('set matchpairs+=<:>')
 vim.cmd('set ttyfast')
 --vim.cmd('set colorcolumn=80')
 --vim.cmd('highlight ColorColumn ctermbg=0 ctermfg=1 guibg=gray21')

@@ -22,10 +22,11 @@ return require('packer').startup({function(use)
 		-- or                            , branch = '0.1.x',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
+	use {'nvim-telescope/telescope-symbols.nvim'}
 	use {
 		'neoclide/coc.nvim',
 		branch = 'release',
-		run = ':CocInstall coc-pairs coc-html coc-css coc-tsserver coc-json coc-emmet coc-prettier @yaegassy/coc-tailwindcss3 coc-markdownlint coc-go'
+		run = ':CocInstall coc-pairs coc-html coc-css coc-tsserver coc-json coc-emmet coc-prettier @yaegassy/coc-tailwindcss3 coc-markdownlint coc-go coc-lua'
 	}
 	use {'tpope/vim-fugitive'}
 	use 'christoomey/vim-tmux-navigator'
@@ -49,23 +50,27 @@ return require('packer').startup({function(use)
 			require"octo".setup()
 		end
 	}
-	use '/home/yd/Projects/speedster.nvim'
-	--use 'mfussenegger/nvim-dap'
-	--use 'rcarriga/nvim-dap-ui'
-	--	use {
-		--		'VonHeikemen/lsp-zero.nvim',
-		--		branch = 'v2.x',
-		--		requires = {
-			--			-- LSP Support
-			--			{'neovim/nvim-lspconfig'},             -- Required
-			--			{'williamboman/mason.nvim'},           -- Optional
-			--			{'williamboman/mason-lspconfig.nvim'}, -- Optional
-			--
-			--			-- Autocompletion
-			--			{'hrsh7th/nvim-cmp'},     -- Required
-			--			{'hrsh7th/cmp-nvim-lsp'}, -- Required
-			--			{'L3MON4D3/LuaSnip'},     -- Required
-			--		}
-			--	}
+	use 'ydkulks/speedster.nvim'
+	-- use '/home/yd/Projects/speedster.nvim'
+
+	-- Debugger
+	use 'mfussenegger/nvim-dap'
+	use 'rcarriga/nvim-dap-ui'
+	use 'leoluz/nvim-dap-go'
+
+		-- use {
+		-- 		'VonHeikemen/lsp-zero.nvim',
+		-- 		branch = 'v2.x',
+		-- 		requires = {
+		-- 				-- LSP Support
+		-- 				{'neovim/nvim-lspconfig'},             -- Required
+		-- 				{'williamboman/mason.nvim'},           -- Optional
+		-- 				{'williamboman/mason-lspconfig.nvim'}, -- Optional
+		-- 				-- Autocompletion
+		-- 				{'hrsh7th/nvim-cmp'},     -- Required
+		-- 				{'hrsh7th/cmp-nvim-lsp'}, -- Required
+		-- 				{'L3MON4D3/LuaSnip'},     -- Required
+		-- 			}
+		-- 		}
 end,
 })

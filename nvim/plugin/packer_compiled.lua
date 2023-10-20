@@ -89,6 +89,16 @@ _G.packer_plugins = {
     path = "/home/yd/.local/share/nvim/site/pack/packer/start/indentLine",
     url = "https://github.com/Yggdroot/indentLine"
   },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/yd/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/home/yd/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/yd/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -128,7 +138,12 @@ _G.packer_plugins = {
   ["speedster.nvim"] = {
     loaded = true,
     path = "/home/yd/.local/share/nvim/site/pack/packer/start/speedster.nvim",
-    url = "/home/yd/Projects/speedster.nvim"
+    url = "https://github.com/ydkulks/speedster.nvim"
+  },
+  ["telescope-symbols.nvim"] = {
+    loaded = true,
+    path = "/home/yd/.local/share/nvim/site/pack/packer/start/telescope-symbols.nvim",
+    url = "https://github.com/nvim-telescope/telescope-symbols.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
