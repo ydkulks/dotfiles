@@ -146,5 +146,7 @@ export NVM_DIR="$HOME/.nvm"
 . "$HOME/.cargo/env"
 
 ## VI / Vim mode in bash
-set -o vi
-## bind -P : Command to list all key bindings in which ever more you are currently in
+set -o vi # bind -P : Command to list all key bindings in which ever more you are currently in
+
+## Starship (custom prompt)
+eval "$(starship init bash)" #curl -sS https://starship.rs/install.sh | sh

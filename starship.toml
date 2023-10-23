@@ -1,0 +1,221 @@
+# ~/.config/starship.toml
+# add_newline =false
+[cmd_duration]
+style = 'fg:240'
+format = '[ 祥 $duration]($style)'
+
+[directory]
+style = 'green'
+read_only = " 󰌾"
+
+[git_status]
+style = 'fg:240'
+[git_branch]
+style = 'fg:240'
+format = ' [$symbol$branch(:$remote_branch)]($style) '
+[git_commit]
+style = 'fg:240'
+
+[character]
+success_symbol = '[❯](fg:240)'
+
+[package]
+format = '[pkg $version](fg:240)'
+
+# Language
+[golang]
+symbol = " "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+# Nerd font icons
+[aws]
+symbol = "  "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+[buf]
+symbol = " "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+[c]
+symbol = " "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+[conda]
+symbol = " "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+[dart]
+symbol = " "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+# [directory]
+# read_only = " 󰌾"
+
+[docker_context]
+symbol = " "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+[elixir]
+symbol = " "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+[elm]
+symbol = " "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+# [fossil_branch]
+# symbol = " "
+
+# [git_branch]
+# symbol = " "
+
+# [golang]
+# symbol = " "
+
+[guix_shell]
+symbol = " "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+[haskell]
+symbol = " "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+[haxe]
+symbol = " "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+[hg_branch]
+symbol = " "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+[hostname]
+ssh_symbol = " "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+[java]
+symbol = " "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+[julia]
+symbol = " "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+[lua]
+symbol = " "
+disabled = true
+format = "[$symbol($version)]($style) "
+
+[memory_usage]
+format = "[$symbol($version)]($style) "
+disabled = true
+symbol = "󰍛 "
+
+[meson]
+format = "[$symbol($version)]($style) "
+disabled = true
+symbol = "󰔷 "
+
+[nim]
+format = "[$symbol($version)]($style) "
+disabled = true
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+[nodejs]
+symbol = " "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = "󰍲 "
+
+# [package]
+# symbol = "󰏗 "
+
+[pijul_channel]
+symbol = " "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+[python]
+symbol = " "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+[rlang]
+symbol = "󰟔 "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+[ruby]
+symbol = " "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+[rust]
+symbol = " "
+format = "[$symbol($version)]($style) "
+disabled = true
+
+[scala]
+symbol = " "
+format = "[$symbol($version)]($style) "
+disabled = true
