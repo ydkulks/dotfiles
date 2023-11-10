@@ -1,5 +1,10 @@
 # ~/.config/starship.toml
 # add_newline =false
+format = '$os$all'
+[os]
+disabled = false
+style = 'blue'
+
 [cmd_duration]
 style = 'fg:240'
 format = '[ 祥 $duration]($style)'
