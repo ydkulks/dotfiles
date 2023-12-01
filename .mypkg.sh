@@ -5,6 +5,7 @@ function my_pkg()
     echo 'Installing packages' $1
     echo '==================='
     sudo apt update
+		sudo apt upgrade
 		#sudo apt-get install build-essentials
     #sudo apt-get install python-pip
     #sudo apt-get install python3

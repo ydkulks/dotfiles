@@ -140,10 +140,13 @@ PS1+="\[${lightgrey}\]↪ ";
 PS1+="\[${reset}\]";
 export PS1;
 
+## NVM installation
+## curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-. "$HOME/.cargo/env"
+
+# . "$HOME/.cargo/env"
 
 ## VI / Vim mode in bash
 set -o vi # bind -P : Command to list all key bindings in which ever more you are currently in
