@@ -11,6 +11,7 @@ function my_pkg()
     #sudo apt-get install python3
     #pip3 install numpy
     #sudo apt-get install node.js
+		#curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
     #sudo apt-get install mono-runtime
     #sudo apt-get install mono-mcs
     #sudo apt-get install ffmpeg
@@ -23,6 +24,12 @@ function my_pkg()
 		# && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
 		# && sudo apt update \
 		# && sudo apt install gh -y
+		
+		# # type "gh auth login" to add updated credentials
 
 		# curl -sS https://starship.rs/install.sh | sh
+
+		# # Copy text to windows clipboard
+		# # Download https://github.com/equalsraf/win32yank/releases and extract zip file
+		# # chmod +x win32yank.exe && sudo cp win32yank.exe /usr/local/bin
 }

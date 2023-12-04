@@ -23,7 +23,7 @@ vim.cmd('set ttyfast')
 --vim.cmd('highlight ColorColumn ctermbg=0 ctermfg=1 guibg=gray21')
 vim.cmd('set path+=**') --find all the branches of directory
 
-vim.opt.swapfile = true
+vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .."/.vim/undodir"
 vim.opt.undofile = true
@@ -33,7 +33,7 @@ vim.keymap.set("i","<leader>jk", '<Esc>')
 vim.keymap.set("v","<leader>jk", '<Esc>')
 
 vim.keymap.set("n","<C-z>", ':undo<CR>')
-vim.keymap.set("n","<leader>v", '<C-v>')
+vim.keymap.set("n","<leader>v", '<C-v>') -- to work in WSL
 vim.keymap.set("n","<leader>H", '^')
 vim.keymap.set("n","<leader>L", '$')
 vim.keymap.set("n","J", '<c-e>')
