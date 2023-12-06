@@ -11,6 +11,7 @@ vim.cmd('set relativenumber')
 vim.cmd('set smartindent')
 vim.cmd('set tabstop=2')
 vim.cmd('set shiftwidth=2')
+vim.cmd('set expandtab') -- Use space to indent
 vim.cmd('syntax enable')
 vim.cmd('set cursorline')
 vim.cmd('set foldmethod=indent')

@@ -32,4 +32,8 @@ function my_pkg()
 		# # Copy text to windows clipboard
 		# # Download https://github.com/equalsraf/win32yank/releases and extract zip file
 		# # chmod +x win32yank.exe && sudo cp win32yank.exe /usr/local/bin
+
+		# # Golang installation
+		# wget https://golang.org/dl/go1.21.4.linux-amd64.tar.gz
+    # sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.21.4.linux-amd64.tar.gz
 }

@@ -148,6 +148,9 @@ export NVM_DIR="$HOME/.nvm"
 
 # . "$HOME/.cargo/env"
 
+## Golang env
+export PATH=$PATH:/usr/local/go/bin
+
 ## VI / Vim mode in bash
 set -o vi # bind -P : Command to list all key bindings in which ever more you are currently in
 
