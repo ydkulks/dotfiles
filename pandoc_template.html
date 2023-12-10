@@ -1,0 +1,86 @@
+<!--
+sudo apt-get install pandoc
+
+pandoc --standalone --template *HTML template* *Markdown* -o *path/to/store/output/file.html*
+
+Add this at the beginning of the Markdown file:
+---
+title: My Document
+---
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <title>$title$</title> -->
+  </head>
+  <style>
+    body {
+      background-color: #0A0E12;
+      color: #BFDAD9;
+      margin: 5%;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: bolder;
+    }
+    h1::after,
+    h2::after {
+      content: "";
+      display: block;
+      border-top: 2px solid #555;
+      margin: 10px 0;
+    }
+    p code {
+      background-color: #1F2427;
+      padding: 1mm;
+    }
+    pre {
+      //margin: 1rem;
+      padding: 1rem;
+      background-color: #191d24;
+      border-radius: 1rem;
+    }
+    .sourceCode {
+      overflow-x: auto;
+    }
+    a {
+      color: #b1b4b8;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #658ce3;
+    }
+    /* Width of the entire scrollbar */
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #262626;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #555;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #b1b4b8;
+    }
+  </style>
+  <body>
+    <!-- <p>Date: $date$</p> -->
+    $body$
+  </body>
+</html>

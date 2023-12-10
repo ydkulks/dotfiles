@@ -36,4 +36,10 @@ function my_pkg()
 		# # Golang installation
 		# wget https://golang.org/dl/go1.21.4.linux-amd64.tar.gz
     # sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.21.4.linux-amd64.tar.gz
+
+    # # Terminal text based browser
+    # sudo apt-get install links2
+
+    # # Convert Markdown to HTML
+    # sudo apt-get install pandoc
 }
