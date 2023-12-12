@@ -16,13 +16,25 @@ title: My Document
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <title>$title$</title> -->
   </head>
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-atom-dark.css"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/plugins/show-language/prism-show-language.css"
+  />
+
   <style>
     body {
-      background-color: #0A0E12;
-      color: #BFDAD9;
+      background-color: #0a0e12;
+      color: #bfdad9;
       margin: 5%;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 16px;
+      word-wrap: break-word;
     }
     h1,
     h2,
@@ -40,16 +52,13 @@ title: My Document
       margin: 10px 0;
     }
     p code {
-      background-color: #1F2427;
+      background-color: #1f2427;
       padding: 1mm;
     }
     pre {
-      //margin: 1rem;
       padding: 1rem;
       background-color: #191d24;
       border-radius: 1rem;
-    }
-    .sourceCode {
       overflow-x: auto;
     }
     a {
@@ -59,28 +68,49 @@ title: My Document
     a:hover {
       color: #658ce3;
     }
+
     /* Width of the entire scrollbar */
     ::-webkit-scrollbar {
       width: 5px;
     }
-
     /* Track */
     ::-webkit-scrollbar-track {
       background: #262626;
     }
-
     /* Handle */
     ::-webkit-scrollbar-thumb {
       background: #555;
     }
-
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
       background: #b1b4b8;
     }
   </style>
+
   <body>
     <!-- <p>Date: $date$</p> -->
     $body$
   </body>
+
+  <script>
+    // JavaScript to replace part of the class name
+    document.addEventListener("DOMContentLoaded", function () {
+      var codeElements = document.querySelectorAll("code.sourceCode");
+
+      codeElements.forEach(function (element) {
+        // Get the current class attribute
+        var currentClass = element.getAttribute("class");
+
+        // Replace "sourceCode" with "lang-"
+        var newClass = currentClass.replace("sourceCode ", "lang-");
+
+        // Set the new class attribute
+        element.setAttribute("class", newClass);
+      });
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@v1.x/plugins/autoloader/prism-autoloader.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/plugins/show-language/prism-show-language.js"></script>
 </html>
