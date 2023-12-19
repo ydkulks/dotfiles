@@ -1,4 +1,5 @@
 vim.keymap.set('n','<leader>r', '<Plug>(coc-references-used)')
+vim.keymap.set('n','<leader>gd', '<Plug>(coc-definition)')
 vim.keymap.set('n','<leader>rn', '<Plug>(coc-rename)')
 
 vim.cmd('set signcolumn=yes')
