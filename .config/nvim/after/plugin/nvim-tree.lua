@@ -3,6 +3,7 @@ require("nvim-tree").setup({
 	on_attach = my_on_attach,
 	view = {
 		width = 30,
+    side = "right",
 	},
 	filters = {
 		dotfiles = true,

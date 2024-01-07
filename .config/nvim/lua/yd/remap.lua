@@ -11,7 +11,7 @@ vim.cmd('set relativenumber')
 vim.cmd('set smartindent')
 vim.cmd('set tabstop=2')
 vim.cmd('set shiftwidth=2')
-vim.cmd('set expandtab') -- Use space to indent
+vim.cmd('set expandtab')
 vim.cmd('syntax enable')
 vim.cmd('set cursorline')
 vim.cmd('set foldmethod=indent')
@@ -57,7 +57,8 @@ vim.keymap.set("n","<C-c>", "\"+y")
 vim.keymap.set("v","<C-c>", "\"+y")
 vim.keymap.set("n","<C-c>", "\"+y")
 
-vim.cmd('command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument')
+-- vim.cmd('command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument')
+vim.cmd('command! -nargs=0 Prettier :normal! ggVG=')
 vim.cmd('command! -nargs=0 NoEng :setlocal spell spelllang=')
 vim.cmd('command! -nargs=0 Eng :setlocal spell spelllang=en_us')
 
