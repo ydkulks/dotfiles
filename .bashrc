@@ -116,6 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+
 ################### Following code are custome ################################
 export TERM=xterm-256color
 ##alias ls='ls -F --color=none'
@@ -140,15 +141,13 @@ PS1+="\[${lightgrey}\]↪ ";
 PS1+="\[${reset}\]";
 export PS1;
 
-## NVM installation
-## curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # . "$HOME/.cargo/env"
 
 ## Golang env
+#sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.20.11.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 
 ## VI / Vim mode in bash
@@ -156,3 +155,6 @@ set -o vi # bind -P : Command to list all key bindings in which ever more you ar
 
 ## Starship (custom prompt)
 eval "$(starship init bash)" #curl -sS https://starship.rs/install.sh | sh
+
+## Case-insensitive tab completion
+bind 'set completion-ignore-case on'
