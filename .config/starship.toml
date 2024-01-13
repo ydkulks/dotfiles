@@ -3,14 +3,14 @@
 format = '$os$all'
 [os]
 disabled = false
-style = 'blue'
+style = 'bold blue'
 
 [cmd_duration]
 style = 'fg:240'
 format = '[ 祥 $duration]($style)'
 
 [directory]
-style = 'green'
+style = 'bold green'
 read_only = " 󰌾"
 
 [git_status]
@@ -22,7 +22,7 @@ format = ' [$symbol$branch(:$remote_branch)]($style) '
 style = 'fg:240'
 
 [character]
-success_symbol = '[❯](fg:240)'
+success_symbol = '[❯](bold fg:240)'
 
 [package]
 format = '[pkg $version](fg:240)'

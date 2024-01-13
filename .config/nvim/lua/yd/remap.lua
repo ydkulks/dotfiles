@@ -34,7 +34,7 @@ vim.keymap.set("i","<leader>jk", '<Esc>')
 vim.keymap.set("v","<leader>jk", '<Esc>')
 
 vim.keymap.set("n","<C-z>", ':undo<CR>')
-vim.keymap.set("n","<leader>v", '<C-v>') -- to work in WSL
+-- vim.keymap.set("n","<leader>v", '<C-v>') -- to work in WSL (or comment this and change in windows terminal settings)
 vim.keymap.set("n","<leader>H", '^')
 vim.keymap.set("n","<leader>L", '$')
 vim.keymap.set("n","J", '<c-e>')
