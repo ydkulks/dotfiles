@@ -3,8 +3,8 @@ local vim = vim
 -- vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
 -- vim.cmd(':hi Cursor gui=NONE guifg=bg guibg=fg')
 
-vim.opt.termguicolors = false
--- vim.opt.termguicolors = true
+-- vim.opt.termguicolors = false
+vim.opt.termguicolors = true
 vim.opt.updatetime = 100
 vim.scrolloff = 8
 vim.cmd('set number')
@@ -38,8 +38,10 @@ vim.keymap.set("n","<C-z>", ':undo<CR>')
 -- vim.keymap.set("n","<leader>v", '<C-v>') -- to work in WSL (or comment this and change in windows terminal settings)
 vim.keymap.set("n","<leader>H", '^')
 vim.keymap.set("n","<leader>L", '$')
-vim.keymap.set("n","J", '<c-e>')
-vim.keymap.set("n","K", '<c-y>')
+vim.keymap.set("n","J", 'J^')
+vim.keymap.set("n","K", '')
+-- vim.keymap.set("n","J", '<c-e>')
+-- vim.keymap.set("n","K", '<c-y>')
 --vim.cmd [[autocmd VimEnter * set foldlevel=0 ]]
 
 --Selected lines move up or down
