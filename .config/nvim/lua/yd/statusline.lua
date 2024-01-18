@@ -45,8 +45,8 @@ end
 local function update_statusline()
 	local cmd = vim.cmd
 	-- Green
-	cmd("highlight StatusLine ctermfg=235 ctermbg=114 cterm=bold guifg=#292d3e guibg=#c3e88d")
-	cmd("highlight StatusLineIcon ctermfg=114 guifg=#c3e88d")
+	cmd("highlight StatusLine ctermfg=235 ctermbg=114 cterm=bold guifg=#292d3e guibg=#98c379 gui=bold")
+	cmd("highlight StatusLineIcon ctermfg=114 guifg=#98c379")
 
 	-- Red (Minimal Color)
 	-- cmd("highlight StatusLine ctermfg=204 ctermbg=235 guifg=#292d3e guibg=#3e4452")
