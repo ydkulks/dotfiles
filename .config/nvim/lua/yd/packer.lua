@@ -8,7 +8,7 @@ return require('packer').startup({function(use)
   use 'wbthomason/packer.nvim'
   use 'drewtempelmeyer/palenight.vim'
   -- use 'ellisonleao/gruvbox.nvim'
-  use 'joshdick/onedark.vim'
+  -- use 'joshdick/onedark.vim'
   -- Post-install/update hook with neovim command
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate' })
   use {
@@ -58,7 +58,7 @@ return require('packer').startup({function(use)
 
     -- Startup page
     use {
-      "startup-nvim/startup.nvim",
+      "ydkulks/startup.nvim",
       requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
       config = function()
         require"startup".setup()
