@@ -35,10 +35,10 @@ local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
   ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  -- ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-  ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
   ['<C-Space>'] = cmp.mapping.complete(),
 })
+-- learn more here -> :h ins-completion
 
 lsp.setup_nvim_cmp({
   mapping = cmp_mappings
@@ -57,3 +57,31 @@ lsp.on_attach(function(client, bufnr)
   end, opts)
   -- vim.keymap.set("", "", function() vim. end, opts)
 end)
+
+--[[
+-- Autocompletion
+{'hrsh7th/nvim-cmp'},     -- Required
+{'hrsh7th/cmp-nvim-lsp'}, -- Required
+{'hrsh7th/cmp-buffer'},
+{'hrsh7th/cmp-path'},
+{'hrsh7th/cmp-nvim-lua'},
+{'L3MON4D3/LuaSnip'},     -- Required
+]]
+
+cmp.setup({
+  snippet = {
+    expand = function (args)
+      require("luasnip").lsp_expand(args.body)
+    end,
+  },
+
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'path'},
+    { name = 'luasnip' },
+    { name = 'buffer', keyword_length = 5 },
+  }),
+  experimental = {
+    ghost_text = true,
+  }
+})

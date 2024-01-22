@@ -38,10 +38,11 @@ vim.keymap.set("n","<C-z>", ':undo<CR>')
 -- vim.keymap.set("n","<leader>v", '<C-v>') -- to work in WSL (or comment this and change in windows terminal settings)
 vim.keymap.set("n","<leader>H", '^')
 vim.keymap.set("n","<leader>L", '$')
-vim.keymap.set("n","J", 'J^')
-vim.keymap.set("n","K", '')
--- vim.keymap.set("n","J", '<c-e>')
--- vim.keymap.set("n","K", '<c-y>')
+-- vim.keymap.set("n","J", 'J^')
+-- vim.keymap.set("n","K", '')
+vim.keymap.set("n","J", '<c-e>')
+vim.keymap.set("n","K", '<c-y>')
+vim.keymap.set("n","<leader>J", 'J^')
 --vim.cmd [[autocmd VimEnter * set foldlevel=0 ]]
 
 --Selected lines move up or down

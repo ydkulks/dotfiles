@@ -49,6 +49,7 @@ return require('packer').startup({function(use)
       end
     }
     use 'ydkulks/speedster.nvim'
+    use '/home/yd/Projects/AST.nvim'
     -- use '/home/yd/Projects/speedster.nvim'
 
     -- Debugger
@@ -76,6 +77,9 @@ return require('packer').startup({function(use)
         -- Autocompletion
         {'hrsh7th/nvim-cmp'},     -- Required
         {'hrsh7th/cmp-nvim-lsp'}, -- Required
+        {'hrsh7th/cmp-buffer'},
+        {'hrsh7th/cmp-path'},
+        {'hrsh7th/cmp-nvim-lua'},
         {'L3MON4D3/LuaSnip'},     -- Required
       }
     }
