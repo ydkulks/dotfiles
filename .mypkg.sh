@@ -42,4 +42,7 @@ function my_pkg()
 
     # # Convert Markdown to HTML
     # sudo apt-get install pandoc
+
+    # # Command-line fuzzy finder
+    # sudo apt-get install fzf
 }
