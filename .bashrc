@@ -141,7 +141,8 @@ PS1+="\[${lightgrey}\]↪ ";
 PS1+="\[${reset}\]";
 export PS1;
 
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="$XDG_DATA_HOME"/nvm
+# export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # . "$HOME/.cargo/env"
@@ -164,4 +165,20 @@ bind 'set completion-ignore-case on'
 # Ex: rm $(fzf)
 alias myfzf="find . -type f -o -type d | grep -vE '/(\.git|node_modules|\.cargo|\.rustup|\.nvm|\.npm|\.local|\.emacs.d|\.doom.d|\.cache|go|\.vim|\.tmux|\.gnupg)/' | fzf"
 alias nvimfzf="nvim \$(myfzf)"
-alias cdfzf="cd \$(myfzf)"
+alias cdfzf="cd \$(find . -type d -name '*' | grep -vE '/(\.git|node_modules|\.cargo|\.rustup|\.nvm|\.npm|\.local|\.emacs.d|\.doom.d|\.cache|go|\.vim|\.tmux|\.gnupg)' | fzf)"
+
+## XDG Base Directory (Clean $HOME directory)
+# export NVM_DIR="$XDG_DATA_HOME"/nvm
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+#
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+export HISTFILE="${XDG_STATE_HOME}"/bash/history
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+# export TMUX_CONFIG="~/.config/tmux/tmux.conf"
+# alias tmux="tmux -f '$TMUX_CONFIG'"
+export GOPATH="$XDG_DATA_HOME"/go
