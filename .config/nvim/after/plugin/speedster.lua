@@ -1,4 +1,4 @@
--- init.lua
+--[[
 require("speedster.config").setup({
     -- Default values
     num_char = 50,     -- Number of characters displayed
@@ -16,3 +16,4 @@ require("speedster.config").setup({
       Border = 'guifg=#3b4048 ctermfg=238'
     }
 })
+]]

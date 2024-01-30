@@ -73,3 +73,5 @@ vim.keymap.set("n","<leader>t",'<Plug>PlenaryTestFile')
 -- <F2> --> Open neovim config
 vim.keymap.set("n","<F2>",":e ~/.config/nvim/<CR>")
 
+-- Kemap that I reserver for testing new plugins
+-- vim.keymap.set("n","<leader><Space>",":ASTToggle<CR>")

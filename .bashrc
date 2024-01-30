@@ -163,9 +163,9 @@ bind 'set completion-ignore-case on'
 ## fzf config: include dotfiles, ignore .git and node_modules
 # COMMAND $(fzf)
 # Ex: rm $(fzf)
-alias myfzf="find . -type f -o -type d | grep -vE '/(\.git|node_modules|\.cargo|\.rustup|\.nvm|\.npm|\.local|\.emacs.d|\.doom.d|\.cache|go|\.vim|\.tmux|\.gnupg)/' | fzf"
+alias myfzf="find . -type f -o -type d | grep -vE '/(\.git|node_modules|\.cargo|\.rustup|\.nvm|\.npm|\.local|\.emacs.d|\.doom.d|\.cache|go|\.vim|\.tmux|\.gnupg)/' | fzf-tmux"
 alias nvimfzf="nvim \$(myfzf)"
-alias cdfzf="cd \$(find . -type d -name '*' | grep -vE '/(\.git|node_modules|\.cargo|\.rustup|\.nvm|\.npm|\.local|\.emacs.d|\.doom.d|\.cache|go|\.vim|\.tmux|\.gnupg)' | fzf)"
+alias cdfzf="cd \$(find . -type d -name '*' | grep -vE '/(\.git|node_modules|\.cargo|\.rustup|\.nvm|\.npm|\.local|\.emacs.d|\.doom.d|\.cache|go|\.vim|\.tmux|\.gnupg)' | fzf-tmux)"
 
 ## XDG Base Directory (Clean $HOME directory)
 # export NVM_DIR="$XDG_DATA_HOME"/nvm

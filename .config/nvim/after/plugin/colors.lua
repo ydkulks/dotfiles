@@ -1,7 +1,7 @@
 local vim = vim
 function ColorMyPencils(color)
 	color = "palenight"
-	-- color = "onedark"
+	-- color = "gruvbox"
 
   if color == "palenight" then
     vim.opt.termguicolors = false
