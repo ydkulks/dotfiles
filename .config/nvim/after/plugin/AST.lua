@@ -1,0 +1,8 @@
+-- require("AST").setup({
+--   nodeTypeRequired = {
+--     { "function_declaration", "󰊕()" },
+--     { "if_statement", " " },
+--     { "for_statement", " " },
+--     { "while_statement", " " }
+--   }
+-- })

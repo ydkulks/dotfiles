@@ -20,6 +20,8 @@ my dotfiles and play-around with it ,but i recommend writing you're own dotfiles
 
 ```bash
 git clone https://github.com/ydkulks/dotfiles.git
+cd dotfiles
+bash install.bash
 ```
 
 - Dotfiles will run automatically when you open terminal

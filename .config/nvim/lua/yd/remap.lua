@@ -5,7 +5,7 @@ local vim = vim
 
 -- vim.opt.termguicolors = false
 vim.opt.termguicolors = true
-vim.opt.updatetime = 100
+vim.opt.updatetime = 25
 vim.scrolloff = 8
 vim.cmd('set number')
 vim.cmd('set relativenumber')
@@ -74,4 +74,4 @@ vim.keymap.set("n","<leader>t",'<Plug>PlenaryTestFile')
 vim.keymap.set("n","<F2>",":e ~/.config/nvim/<CR>")
 
 -- Kemap that I reserver for testing new plugins
--- vim.keymap.set("n","<leader><Space>",":ASTToggle<CR>")
+vim.keymap.set("n","<leader><Space>",":ASTToggle<CR>")

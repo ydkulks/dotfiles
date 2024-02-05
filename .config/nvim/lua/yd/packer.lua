@@ -35,17 +35,19 @@ return require('packer').startup({ function(use)
 
   -- My plugins
   -- use 'ydkulks/speedster.nvim'
-  use '/home/yd/Projects/conceal.nvim'
-  use {
-    "ydkulks/AST.nvim",
-    requires = {
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-lua/plenary.nvim"
-    },
-    config = function()
-      require("AST")
-    end
-  }
+  use '/home/yd/Projects/luaPlugins/conceal.nvim'
+  use '/home/yd/Projects/luaPlugins/AST.nvim'
+
+  -- use {
+  --   "ydkulks/AST.nvim",
+  --   requires = {
+  --     "nvim-treesitter/nvim-treesitter",
+  --     "nvim-lua/plenary.nvim"
+  --   },
+  --   config = function()
+  --     require("AST")
+  --   end
+  -- }
 
   -- Debugger
   -- use 'mfussenegger/nvim-dap'
