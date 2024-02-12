@@ -19,14 +19,14 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export PATH=$PATH:/usr/local/go/bin
 
 ## XDG Base Directory (Clean $HOME directory)
-# export NVM_DIR="$XDG_DATA_HOME"/nvm
-# alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+export NVM_DIR="$XDG_DATA_HOME"/nvm
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 export HISTFILE="${XDG_STATE_HOME}"/bash/history
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export TMUX_CONFIG="~/.config/tmux/tmux.conf"
-# alias tmux="tmux -f '$TMUX_CONFIG'"
 export GOPATH="$XDG_DATA_HOME"/go
 export PYTHON_HISTORY="${XDG_STATE_HOME}"/python/history
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass

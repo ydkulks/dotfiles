@@ -80,17 +80,8 @@ return require('packer').startup({ function(use)
       { 'L3MON4D3/LuaSnip' }, -- Required
     }
   }
-  -- -- ChatGPT.nvim
-  -- use({
-  --   "jackMort/ChatGPT.nvim",
-  --   config = function()
-  --     require("chatgpt").setup()
-  --   end,
-  --   requires = {
-  --     "MunifTanjim/nui.nvim",
-  --     "nvim-lua/plenary.nvim",
-  --     "nvim-telescope/telescope.nvim"
-  --   }
-  -- })
+
+  -- AI
+  use "jpmcb/nvim-llama"
 end,
 })

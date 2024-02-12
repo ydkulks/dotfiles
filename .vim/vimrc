@@ -1,3 +1,4 @@
+if !has('nvim') | set viminfofile=$XDG_STATE_HOME/vim/viminfo | endif
 "======VIM-KEY-BINDINGS-REFERENCE======
 "
 " <leader> = ','

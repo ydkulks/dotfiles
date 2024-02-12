@@ -54,4 +54,7 @@ function my_pkg()
     # pass insert example.site
     # pass generate site/example2.site 32 --no-symbols
     # pass example.site | gh auth login --with-token
+
+    # # Docker for nvim-llama
+    # sudo apt-get install docker.io
 }

@@ -15,26 +15,38 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <title>$title$</title> -->
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <title>$title$</title> -->
+</head>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-atom-dark.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.14.0/plugins/toolbar/prism-toolbar.css"/>
-  <!-- <link rel="stylesheet" -->
-  <!-- href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/plugins/show-language/prism-show-language.css" /> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-atom-dark.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.14.0/plugins/toolbar/prism-toolbar.css" />
+<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+<!-- <link rel="stylesheet" -->
+<!-- href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/plugins/show-language/prism-show-language.css" /> -->
 
-  <style>
-body {
-  background-color: #0a0e12;
-  color: #bfdad9;
-  margin: 5%;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  word-wrap: break-word;
-}
+<style>
+  /* TODO: Create variables to store colors */
+  /*
+  :root {
+    -- bg: #1e1e1e;
+    -- text: #bfdad9;
+    -- code_bg: #2b2a2a;
+  }
+  */
+  /*var(--bg)*/
+
+  body {
+    background-color: #1e1e1e;
+    color: #bfdad9;
+    margin: 5%;
+    font-family: 'Architects Daughter';
+    font-size: 16px;
+    word-wrap: break-word;
+  }
 
   h1,
   h2,
@@ -49,28 +61,54 @@ body {
   h2::after {
     content: "";
     display: block;
-    border-top: 2px solid #555;
+    border-top: 2px solid #2b2a2a;
     margin: 10px 0;
   }
 
   code {
-    background-color: #1d1f21;
+    background-color: #3d3d3d;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #bfdad9;
+  }
+
+  pre code {
+    /*background-color: #2b2a2a;*/
+    background-color: #222222;
   }
 
   pre {
+    /*background-color: #2b2a2a !important;*/
+    background-color: #222222 !important;
     padding: 1rem;
-    background-color: #191d24;
-    border-radius: 1rem;
+    border: solid;
+    /*border-color: #2b2a2a !important;*/
+    border-color: #222222 !important;
+    border-radius: 0.5rem !important;
     overflow-x: auto;
   }
 
   a {
-    color: #b1b4b8;
+    /*color: #b1b4b8;*/
+    color: #5982b9;
     text-decoration: none;
   }
 
   a:hover {
     color: #658ce3;
+    text-decoration: underline;
+  }
+
+  .strike-through {
+    text-decoration: line-through;
+    color: #a3a3a3;
+  }
+
+  li input[type="checkbox" i]:disabled {
+    positioin: absolute;
+    background-color: #4ab56e;
+    color: #4ab56e;
   }
 
   /* Width of the entire scrollbar */
@@ -96,36 +134,117 @@ body {
   ::-webkit-scrollbar-thumb:hover {
     background: #b1b4b8;
   }
-  </style>
 
-  <body>
-    <!-- <p>Date: $date$</p> -->
+  .bodyWraper {
+    gap: 1rem;
+    max-width: 600px;
+    min-width: 500px;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+  }
+</style>
+
+<style>
+  input[type="checkbox"] {
+    display: inline-block;
+  }
+
+  /* Custom checkbox checked style */
+  input[type="checkbox"]:checked::before {
+    content: "\2713";
+    /* Checkmark symbol */
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    line-height: 15px;
+    background-color: #57a868;
+    font-weight: 900;
+    /*color: #57a868;
+    border: 1px solid #57a868;*/
+  }
+
+  /* Custom checkbox unchecked style */
+  input[type="checkbox"]::before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #000;
+    background-color: none;
+    margin-right: 5px;
+  }
+
+  /* Disabled checkbox style */
+  input[type="checkbox"]:disabled::before {
+    background-color: #1e1e1e;
+    border-color: #999;
+    border-radius: 5px;
+  }
+
+  input[type="checkbox"]:disabled:checked::before {
+    content: "\2713";
+    /* Checkmark symbol */
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    line-height: 15px;
+    background-color: #57a868;
+    color: #1e1e1e;
+    /* Disabled checkmark color */
+  }
+</style>
+
+<body>
+  <!-- <p>Date: $date$</p> -->
+  <div class="bodyWraper">
     $body$
-  </body>
+  </div>
+</body>
 
-  <script>
-    // JavaScript to replace part of the class name
-    document.addEventListener("DOMContentLoaded", function () {
-      var codeElements = document.querySelectorAll("code.sourceCode");
+<script>
+  // JavaScript to replace part of the class name
+  document.addEventListener("DOMContentLoaded", function () {
+    var codeElements = document.querySelectorAll("code.sourceCode");
 
-      codeElements.forEach(function (element) {
-        // Get the current class attribute
-        var currentClass = element.getAttribute("class");
+    codeElements.forEach(function (element) {
+      // Get the current class attribute
+      var currentClass = element.getAttribute("class");
 
-        // Replace "sourceCode" with "lang-"
-        var newClass = currentClass.replace("sourceCode ", "lang-");
+      // Replace "sourceCode" with "lang-"
+      var newClass = currentClass.replace("sourceCode ", "lang-");
 
-        // Set the new class attribute
-        element.setAttribute("class", newClass);
-      });
+      // Set the new class attribute
+      element.setAttribute("class", newClass);
     });
-  </script>
+  });
 
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@v1.x/plugins/autoloader/prism-autoloader.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.14.0/plugins/toolbar/prism-toolbar.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.14.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
-  <!-- <script -->
-  <!--   src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/plugins/show-language/prism-show-language.js"></script> -->
+  // Strike-through for checked checkedbox
+  const listItems = document.querySelectorAll('li');
+
+  // Loop through each list item
+  listItems.forEach(item => {
+    // Get the checkbox within the list item
+    const checkbox = item.querySelector('input[type="checkbox"]');
+
+    // Check if the checkbox is checked
+    if (checkbox.checked) {
+      // Add the "strike-through" class to the list item
+      item.classList.add('strike-through');
+    }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@v1.x/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.14.0/plugins/toolbar/prism-toolbar.min.js"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/prismjs@1.14.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+<!-- <script -->
+<!--   src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/plugins/show-language/prism-show-language.js"></script> -->
 
 </html>
