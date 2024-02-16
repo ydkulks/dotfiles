@@ -1,0 +1,45 @@
+# Config location
+# 1. $XDG_CONFIG_HOME/alacritty/alacritty.toml
+# 2. $XDG_CONFIG_HOME/alacritty.toml
+# 3. $HOME/.config/alacritty/alacritty.toml
+# 4. $HOME/.alacritty.toml
+# 5. %APPDATA%\alacritty\alacritty.toml
+
+# WSL2 specific config
+[shell]
+program = "ubuntu2204.exe"
+
+[window]
+dimensions = { columns = 122, lines = 32 }
+position = { x = 125, y = 225 }
+# padding = { x = 5, y = 5 }
+padding = { x = 5, y = 10 }
+# decorations = "Full"
+decorations = "None"
+opacity = 0.97
+blur = true
+dynamic_title = true
+
+[font]
+normal = { family = "UbuntuMono NF"}
+size = 13.0
+offset = { x = 1, y = 1 }
+glyph_offset = { x = 0, y = 1 }
+
+[colors]
+cursor = { text = "CellBackground", cursor = "#61AFEF"}
+
+[colors.primary]
+foreground = "#B1B4B8"
+background = "#262626"
+
+[bell]
+animation = "Linear"
+duration = 1
+
+[cursor]
+style = { blinking = "Always" }
+blink_timeout = 20
+
+[mouse]
+hide_when_typing = true

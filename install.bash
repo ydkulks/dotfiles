@@ -25,7 +25,7 @@ fi
 if ask "Link config files"; then
   echo "---------------Creating Symbolic links---------------"
 
-  symlink_file=".bashrc .vim/vimrc .vim/colors .config/tmux .config/starship.toml .config/nvim"
+  symlink_file=".bashrc .vim/vimrc .vim/colors .config/tmux .config/starship.toml .config/nvim .config/npm"
   for files in $symlink_file; do
     if ask "Sync $files" && [[ ! -L "${HOME}/$files" ]]; then
       echo "$dotfiles_path$files --> ~/$files"

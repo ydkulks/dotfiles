@@ -23,12 +23,16 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-atom-dark.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.14.0/plugins/toolbar/prism-toolbar.css" />
-<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet"> -->
 <!-- <link rel="stylesheet" -->
 <!-- href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/plugins/show-language/prism-show-language.css" /> -->
 
 <style>
+  @font-face {
+    font-family: "Virgil";
+    src: url('./Projects/dotfiles/terminal/fonts/Virgil.woff2') format('woff2');
+  }
+
   /* TODO: Create variables to store colors */
   /*
   :root {
@@ -43,7 +47,8 @@
     background-color: #1e1e1e;
     color: #bfdad9;
     margin: 5%;
-    font-family: 'Architects Daughter';
+    /*font-family: 'Virgil','Architects Daughter';*/
+    font-family: 'Virgil';
     font-size: 16px;
     word-wrap: break-word;
   }
@@ -137,7 +142,7 @@
 
   .bodyWraper {
     gap: 1rem;
-    max-width: 600px;
+    max-width: 1253px;
     min-width: 500px;
   }
 
