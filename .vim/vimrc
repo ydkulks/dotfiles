@@ -161,6 +161,13 @@ hi CursorLine term=NONE guibg=gray20 cterm=NONE ctermbg=4
  "Setting leader key
  let mapleader = ","
 
+let g:netrw_winsize=-28
+let g:netrw_banner=0
+let g:netrw_liststyle=3
+let g:netrw_sort_sequence='[\\/]$,*'
+
+noswapfile
+
  "============KEY BINDINGS=============
  " inoremap {<cr> {<cr>}<c-o><s-o
  " inoremap [<cr> [<cr>]<c-o><s-o

@@ -94,6 +94,17 @@
     overflow-x: auto;
   }
 
+  blockquote {
+    border-radius: 5px;
+    font-style: italic;
+    font-weight: bolder;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #222222;
+    border: solid 1px #2e2e2e;
+    color: #8e9d9c;
+  }
+
   a {
     /*color: #b1b4b8;*/
     color: #5982b9;
@@ -116,6 +127,26 @@
     color: #4ab56e;
   }
 
+  td,
+  th {
+    border-right: 1px solid gray;
+    padding: 1rem;
+  }
+
+  th {
+    border-bottom: 1px solid gray;
+  }
+
+  thead tr.header {
+    border-bottom: 1px solid gray;
+  }
+
+  table {
+    border-collapse: collapse;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 500px;
+  }
   /* Width of the entire scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
