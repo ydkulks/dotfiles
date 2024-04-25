@@ -1,12 +1,9 @@
 local vim = vim
---To enable mode shapes, "Cursor" highlight, and blinking:
--- vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
--- vim.cmd(':hi Cursor gui=NONE guifg=bg guibg=fg')
 
 -- vim.opt.termguicolors = false
 vim.opt.termguicolors = true
 vim.opt.updatetime = 25
-vim.scrolloff = 8
+vim.opt.scrolloff = 5
 vim.cmd('set number')
 vim.cmd('set relativenumber')
 vim.cmd('set smartindent')
@@ -35,7 +32,6 @@ vim.keymap.set("i","<leader>jk", '<Esc>')
 vim.keymap.set("v","<leader>jk", '<Esc>')
 
 vim.keymap.set("n","<C-z>", ':undo<CR>')
--- vim.keymap.set("n","<leader>v", '<C-v>') -- to work in WSL (or comment this and change in windows terminal settings)
 vim.keymap.set("n","<leader>H", '^')
 vim.keymap.set("n","<leader>L", '$')
 -- vim.keymap.set("n","J", 'J^')
@@ -58,6 +54,12 @@ vim.keymap.set("n","<C-c>", "\"+y")
 vim.keymap.set("v","<C-c>", "\"+y")
 vim.keymap.set("n","<C-c>", "\"+y")
 
+-- Sets how neovim will display certain whitespace characters in the editor.
+--  See `:help 'list'`
+--  and `:help 'listchars'`
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
 -- vim.cmd('command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument')
 vim.cmd('command! -nargs=0 Prettier :normal! ggVG=')
 vim.cmd('command! -nargs=0 NoEng :setlocal spell spelllang=')
@@ -72,6 +74,18 @@ vim.keymap.set("n","<leader>t",'<Plug>PlenaryTestFile')
 
 -- <F2> --> Open neovim config
 vim.keymap.set("n","<F2>",":e ~/.config/nvim/<CR>")
+
+-- Jump prev and next in Quick fix list
+vim.keymap.set("n","<left>",":lprevious<CR>")
+vim.keymap.set("n","<right>",":lnext<CR>")
+vim.keymap.set("n","<up>",":cabove<CR>")
+vim.keymap.set("n","<down>",":cbelow<CR>")
+
+-- Diagnostic Keymaps
+-- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
+-- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
+-- vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Kemap that I reserver for testing new plugins
 vim.keymap.set("n","<leader><Space>",":ASTToggle<CR>")

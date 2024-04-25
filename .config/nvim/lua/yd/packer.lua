@@ -8,6 +8,18 @@ return require('packer').startup({ function(use)
   use 'wbthomason/packer.nvim'
   use 'drewtempelmeyer/palenight.vim'
   use 'ellisonleao/gruvbox.nvim'
+  use {
+    'folke/tokyonight.nvim',
+    config = function()
+      require("tokyonight").setup {
+        transparent = true,
+        style = {
+          sidebars = "transparent",
+          floats = "transparent"
+        }
+      }
+    end
+  }
   -- Post-install/update hook with neovim command
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use {
@@ -27,10 +39,12 @@ return require('packer').startup({ function(use)
   use 'tpope/vim-commentary'
   use 'mbbill/undotree'
   use 'ThePrimeagen/harpoon'
-  use { 'windwp/nvim-autopairs',
+  use {
+    'windwp/nvim-autopairs',
     config = function()
       require("nvim-autopairs").setup {}
-    end }
+    end
+  }
   -- use 'ThePrimeagen/vim-be-good'
 
   -- My plugins
@@ -61,6 +75,12 @@ return require('packer').startup({ function(use)
     config = function()
       require "startup".setup()
     end
+  }
+
+  -- Comment Utility
+  use {
+    "folke/todo-comments.nvim",
+    require = { "nvim-lua/plenary.nvim" }
   }
 
   use {
