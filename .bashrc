@@ -140,3 +140,4 @@ source /home/yd/Projects/dotfiles/.local/scripts/alias.sh
 source /home/yd/Projects/dotfiles/.local/scripts/compress.sh
 source /home/yd/Projects/dotfiles/.local/scripts/exports.sh
 source /home/yd/Projects/dotfiles/.local/scripts/pandoc.sh
+source /home/yd/Projects/dotfiles/.local/scripts/ffmpeg.sh

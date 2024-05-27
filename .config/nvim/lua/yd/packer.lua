@@ -7,19 +7,8 @@ return require('packer').startup({ function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use 'drewtempelmeyer/palenight.vim'
-  use 'ellisonleao/gruvbox.nvim'
-  use {
-    'folke/tokyonight.nvim',
-    config = function()
-      require("tokyonight").setup {
-        transparent = true,
-        style = {
-          sidebars = "transparent",
-          floats = "transparent"
-        }
-      }
-    end
-  }
+  -- use 'ellisonleao/gruvbox.nvim'
+  use 'folke/tokyonight.nvim'
   -- Post-install/update hook with neovim command
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use {
@@ -27,7 +16,7 @@ return require('packer').startup({ function(use)
     -- or                            , branch = '0.1.x',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
-  use { 'nvim-treesitter/playground' }
+  -- use { 'nvim-treesitter/playground' }
   use { 'nvim-telescope/telescope-symbols.nvim' }
   use { 'tpope/vim-fugitive' }
   use 'christoomey/vim-tmux-navigator'
@@ -49,8 +38,8 @@ return require('packer').startup({ function(use)
 
   -- My plugins
   -- use 'ydkulks/speedster.nvim'
-  use '/home/yd/Projects/luaPlugins/conceal.nvim'
-  use '/home/yd/Projects/luaPlugins/AST.nvim'
+  -- use '/home/yd/Projects/luaPlugins/conceal.nvim'
+  -- use '/home/yd/Projects/luaPlugins/AST.nvim'
 
   -- use {
   --   "ydkulks/AST.nvim",
