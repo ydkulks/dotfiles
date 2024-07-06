@@ -134,7 +134,7 @@ filetype plugin on
  syntax enable
  set laststatus=2
  set title
- set spell
+ "set spell
  set cursorline
  set completeopt+=menuone,longest
  "for folding/hiding lines of code/text

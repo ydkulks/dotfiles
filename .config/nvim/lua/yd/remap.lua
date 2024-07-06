@@ -76,16 +76,17 @@ vim.keymap.set("n","<leader>t",'<Plug>PlenaryTestFile')
 vim.keymap.set("n","<F2>",":e ~/.config/nvim/<CR>")
 
 -- Jump prev and next in Quick fix list
-vim.keymap.set("n","<left>",":lprevious<CR>")
-vim.keymap.set("n","<right>",":lnext<CR>")
-vim.keymap.set("n","<up>",":cabove<CR>")
-vim.keymap.set("n","<down>",":cbelow<CR>")
+-- vim.keymap.set("n","<left>",":lprevious<CR>")
+-- vim.keymap.set("n","<right>",":lnext<CR>")
+-- vim.keymap.set("n","<up>",":cabove<CR>")
+-- vim.keymap.set("n","<down>",":cbelow<CR>")
 
 -- Diagnostic Keymaps
 -- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 -- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
 -- vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+-- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+-- vim.keymap.set('n', '<leader>q', ":Telescope diagnostics<CR>", { desc = 'Press <C-q> to add it to quickfix list' })
 
 -- Kemap that I reserver for testing new plugins
 vim.keymap.set("n","<leader><Space>",":ASTToggle<CR>")

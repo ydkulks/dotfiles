@@ -39,7 +39,7 @@ return require('packer').startup({ function(use)
   -- My plugins
   -- use 'ydkulks/speedster.nvim'
   -- use '/home/yd/Projects/luaPlugins/conceal.nvim'
-  -- use '/home/yd/Projects/luaPlugins/AST.nvim'
+  use '/home/yd/Projects/luaPlugins/AST.nvim'
 
   -- use {
   --   "ydkulks/AST.nvim",
