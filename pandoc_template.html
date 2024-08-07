@@ -148,6 +148,10 @@
     width: 500px;
   }
 
+  .table-container {
+    overflow-x: auto;
+  }
+
   /* Width of the entire scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
@@ -282,6 +286,30 @@
       item.classList.add('strike-through');
     }
   });
+</script>
+
+<script>
+  // Open links in new tab
+  const links = document.getElementsByTagName("a");
+  if (links.length > 0) {
+    for (i = 0; i < links.length; i++) {
+      links[i].setAttribute("target", "_blank");
+    }
+  }
+</script>
+
+<script>
+  // Add wrapper div to table to handle overflow-x
+  document.addEventListener("DOMContentLoaded", function () {
+    var tables = document.querySelectorAll("table");
+
+    tables.forEach(table => {
+      var div = document.createElement("div");
+      div.className = "table-container";
+      table.parentNode.insertBefore(div, table);
+      div.appendChild(table);
+    })
+  })
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.min.js"></script>
