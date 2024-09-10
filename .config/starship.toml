@@ -83,8 +83,8 @@ disabled = true
 # [git_branch]
 # symbol = " "
 
-# [golang]
-# symbol = " "
+[golang]
+symbol = " "
 
 [guix_shell]
 symbol = " "
@@ -192,8 +192,8 @@ Ubuntu = " "
 Unknown = " "
 Windows = "󰍲 "
 
-# [package]
-# symbol = "󰏗 "
+[package]
+symbol = "󰏗 "
 
 [pijul_channel]
 symbol = " "
@@ -202,8 +202,11 @@ disabled = true
 
 [python]
 symbol = " "
-format = "[$symbol($version)]($style) "
-disabled = true
+pyenv_prefix = "pyenv "
+python_binary = "python"
+# format = "[$symbol($version)$pyenv_prefix]($style) "
+format = "via [${symbol}${version} (${virtualenv})]($style) "
+disabled = false
 
 [rlang]
 symbol = "󰟔 "

@@ -63,7 +63,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 --[[
--- Autocompletion
+ NOTE: Autocompletion
 {'hrsh7th/nvim-cmp'},     -- Required
 {'hrsh7th/cmp-nvim-lsp'}, -- Required
 {'hrsh7th/cmp-buffer'},

@@ -91,6 +91,7 @@ return require('packer').startup({ function(use)
   }
 
   -- AI
-  use "jpmcb/nvim-llama"
+  -- Install ollama: curl -fsSL https://ollama.com/install.sh | sh
+  use "David-Kunz/gen.nvim"
 end,
 })
