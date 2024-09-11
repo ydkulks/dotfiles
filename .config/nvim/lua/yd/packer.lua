@@ -92,6 +92,7 @@ return require('packer').startup({ function(use)
 
   -- AI
   -- Install ollama: curl -fsSL https://ollama.com/install.sh | sh
+  -- Run (cmd): ollama run llama3.1 'Test prompt'(ollama run model 'prompt')
   use "David-Kunz/gen.nvim"
 end,
 })
