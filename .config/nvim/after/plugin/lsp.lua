@@ -3,7 +3,7 @@ local lsp = require('lsp-zero').preset({ 'recommended' })
 
 -- -- lsp to be installed
 lsp.ensure_installed({
-  'tsserver',
+  'ts_ls',
   'html',
   'cssls',
   'jsonls',
@@ -11,7 +11,7 @@ lsp.ensure_installed({
   'lua_ls',
   'gopls',
   'tailwindcss',
-  'htmx',
+  'htmx', -- curl https://sh.rustup.rs -sSf | sh
 })
 
 -- -- Mason and lspconfig related config

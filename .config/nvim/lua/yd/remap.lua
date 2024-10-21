@@ -88,5 +88,9 @@ vim.keymap.set("n","<F2>",":e ~/.config/nvim/<CR>")
 -- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 -- vim.keymap.set('n', '<leader>q', ":Telescope diagnostics<CR>", { desc = 'Press <C-q> to add it to quickfix list' })
 
+-- Git gutter hunk Jump
+vim.keymap.set("n","<up>", ":GitGutterPrevHunk<CR>")
+vim.keymap.set("n","<down>", ":GitGutterNextHunk<CR>")
+
 -- Kemap that I reserver for testing new plugins
-vim.keymap.set("n","<leader><Space>",":ASTToggle<CR>")
+-- vim.keymap.set("n","<leader><Space>",":ASTToggle<CR>")

@@ -10,7 +10,7 @@ export TERM=xterm-256color
 export NVM_DIR="$XDG_DATA_HOME"/nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# . "$HOME/.cargo/env"
+. "$XDG_DATA_HOME/cargo/env"
 
 ## npm
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
@@ -31,3 +31,6 @@ export TMUX_CONFIG="~/.config/tmux/tmux.conf"
 export GOPATH="$XDG_DATA_HOME"/go
 export PYTHON_HISTORY="${XDG_STATE_HOME}"/python/history
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
+
+export OLLAMA_MODELS=$XDG_DATA_HOME/ollama/models
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc":"$XDG_CONFIG_HOME/gtk-2.0/gtkrc.mine"

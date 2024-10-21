@@ -20,7 +20,11 @@ return require('packer').startup({ function(use)
   use { 'nvim-telescope/telescope-symbols.nvim' }
   use { 'tpope/vim-fugitive' }
   use 'christoomey/vim-tmux-navigator'
-  use 'airblade/vim-gitgutter'
+  use { 'airblade/vim-gitgutter',
+    vim.cmd("let g:gitgutter_sign_added = '┃'"),
+    vim.cmd("let g:gitgutter_sign_modified = '┃'"),
+    vim.cmd("let g:gitgutter_sign_removed = '┃'"),
+  }
   use 'dsznajder/vscode-es7-javascript-react-snippets'
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-tree/nvim-tree.lua'
