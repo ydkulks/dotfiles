@@ -57,4 +57,10 @@ function my_pkg()
 
     # # Docker for nvim-llama
     # sudo apt-get install docker.io
+
+    # # Yazi - Terminal file manager
+    # yay -S yazi
+
+    # # Cava - Terminal audio visualizer
+    # yay -S cava
 }

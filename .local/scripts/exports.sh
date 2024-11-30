@@ -34,3 +34,4 @@ export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 
 export OLLAMA_MODELS=$XDG_DATA_HOME/ollama/models
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc":"$XDG_CONFIG_HOME/gtk-2.0/gtkrc.mine"
+export HSA_OVERRIDE_GFX_VERSION="10.3.0"

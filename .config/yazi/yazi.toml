@@ -1,0 +1,16 @@
+[manager]
+show_symlink = true
+scrolloff = 8
+
+[opener]
+play = [
+  { run = 'vlc "$@"', orphan = true, for = "unix" },
+]
+edit = [
+  { run = 'nvim "$@"', block = true, for = "unix" },
+]
+
+[open]
+prepend_rules = [
+  { name = "*.mp4", use = "play" },
+]
