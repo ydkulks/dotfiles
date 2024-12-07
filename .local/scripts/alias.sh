@@ -14,3 +14,7 @@ alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 
 alias tmuxsesh="~/Projects/dotfiles/.local/scripts/.tmux-sessionizer"
 # bind '"\C-f": "~/Projects/dotfiles/tmux-sessionizer\C-m"'
+
+# NOTE: Make 256colors work
+# https://github.com/tmux/tmux/wiki/FAQ#how-do-i-use-a-256-colour-terminal
+alias tmux="tmux -2"

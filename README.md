@@ -24,3 +24,9 @@ git clone https://github.com/ydkulks/dotfiles.git
 cd dotfiles
 bash install.bash
 ```
+
+## Test Neovim environment
+```bash
+mkdir ~/.config/nvimexample
+NVIM_APPNAME=nvimxample nvim ~/.config/nvimexample/init.lua
+```
