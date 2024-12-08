@@ -50,10 +50,10 @@ return require('packer').startup({ function(use)
     end,
   }
 
+  use 'folke/which-key.nvim'
+
   -- My plugins
   -- use 'ydkulks/speedster.nvim'
-  -- use '/home/yd/Projects/luaPlugins/conceal.nvim'
-  -- use '/home/yd/Projects/luaPlugins/AST.nvim'
 
   -- use {
   --   "ydkulks/AST.nvim",
