@@ -51,6 +51,7 @@ return require('packer').startup({ function(use)
   }
 
   use 'folke/which-key.nvim'
+  use 'folke/lazydev.nvim'
 
   -- My plugins
   -- use 'ydkulks/speedster.nvim'
