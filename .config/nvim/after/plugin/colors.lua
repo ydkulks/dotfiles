@@ -25,6 +25,7 @@ function ColorMyPencils(color)
     vim.api.nvim_set_hl(0, "GitGutterChange", { bg = "none", fg = "#545c7e" })
     vim.api.nvim_set_hl(0, "GitGutterDelete", { bg = "none", fg = "#db4b4b" })
     -- vim.api.nvim_set_hl(0, "Visual", { bg = "#3c3836", italic = false, bold = true })
+    vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#3b4261"})
   elseif color == "gruvbox" then
     vim.api.nvim_set_hl(0, "SignColumn", { ctermbg = "none" })
     vim.api.nvim_set_hl(0, "GitGutterAdd", { bg = "none" })

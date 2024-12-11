@@ -46,6 +46,9 @@ function my_pkg()
     # # Command-line fuzzy finder
     # sudo apt-get install fzf
 
+    # # fd fuzzy finder
+    # sudo apt-get install fd
+
     # # Password manager CLI (open source)
     # sudo apt-get install pass
     # gpg --full-generate-key

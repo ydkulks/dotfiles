@@ -72,9 +72,6 @@ vim.cmd("let g:indentLine_char = '⋅'")
 -- Mapped for testing lua plugins
 vim.keymap.set("n", "<leader>t", '<Plug>PlenaryTestFile', { desc = "Plenary Run Test" })
 
--- <F2> --> Open neovim config
-vim.keymap.set("n", "<F2>", ":e ~/.config/nvim/<CR>", { desc = "Nvim Config" })
-
 -- Jump prev and next in Quick fix list
 -- vim.keymap.set("n","<left>",":lprevious<CR>")
 -- vim.keymap.set("n","<right>",":lnext<CR>")
