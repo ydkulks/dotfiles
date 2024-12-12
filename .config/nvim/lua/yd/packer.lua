@@ -18,7 +18,15 @@ return require('packer').startup({ function(use)
   }
   -- use { 'nvim-treesitter/playground' }
   use { 'nvim-telescope/telescope-symbols.nvim' }
+  -- Git client
   use { 'tpope/vim-fugitive' }
+  -- Git log visualizer
+  use {
+    'rbong/vim-flog',
+    requires = {
+      { 'tpope/vim-fugitive' }
+    }
+  }
   use 'christoomey/vim-tmux-navigator'
   use { 'airblade/vim-gitgutter',
     vim.cmd("let g:gitgutter_sign_added = '┃'"),
@@ -77,7 +85,7 @@ return require('packer').startup({ function(use)
     "ydkulks/startup.nvim",
     requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
     config = function()
-      require "startup".setup()
+      require "startup".setup({})
     end
   }
 

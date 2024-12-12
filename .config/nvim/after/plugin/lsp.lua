@@ -1,4 +1,3 @@
-local vim = vim
 local lsp = require('lsp-zero').preset({ 'recommended' })
 
 -- -- lsp to be installed
@@ -12,6 +11,7 @@ lsp.ensure_installed({
   'gopls',
   'tailwindcss',
   'htmx', -- curl https://sh.rustup.rs -sSf | sh
+  'asm_lsp',
 })
 
 -- -- Mason and lspconfig related config

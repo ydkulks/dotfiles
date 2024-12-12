@@ -1,5 +1,3 @@
-local vim = vim
-
 -- vim.opt.termguicolors = false
 vim.opt.termguicolors = true
 vim.opt.updatetime = 25

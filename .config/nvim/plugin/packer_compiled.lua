@@ -222,6 +222,11 @@ _G.packer_plugins = {
     path = "/home/yd/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
   },
+  ["vim-flog"] = {
+    loaded = true,
+    path = "/home/yd/.local/share/nvim/site/pack/packer/start/vim-flog",
+    url = "https://github.com/rbong/vim-flog"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/yd/.local/share/nvim/site/pack/packer/start/vim-fugitive",

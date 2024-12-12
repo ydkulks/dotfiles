@@ -1,4 +1,3 @@
-local vim = vim
 local builtin = require('telescope.builtin')
 require('telescope').setup {
   defaults = {

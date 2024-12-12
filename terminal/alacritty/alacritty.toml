@@ -5,6 +5,17 @@
 # 4. $HOME/.alacritty.toml
 # 5. %APPDATA%\alacritty\alacritty.toml
 
+# curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-mocha.toml
+# curl -LO --output-dir ~/.config/alacritty https://github.com/zatchheems/tokyo-night-alacritty-theme
+import = [
+  # "~/.config/alacritty/catppuccin-mocha.toml"
+  "~/.config/alacritty/tokyo-night-alacritty-theme/tokyo-night.toml"
+  # "~/.config/alacritty/tokyo-night-alacritty-theme/tokyo-night-storm.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
 # WSL2 specific config
 [shell]
 program = "ubuntu2204.exe"
