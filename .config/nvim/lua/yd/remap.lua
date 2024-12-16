@@ -91,3 +91,11 @@ vim.keymap.set("n", "<down>", ":GitGutterNextHunk<CR>", { desc = 'Next Hunk' })
 -- vim.keymap.set("n","<leader><Space>",":ASTToggle<CR>")
 
 vim.keymap.set("n", "<leader>?", ":WhichKey<CR>", { desc = 'Show which-key' })
+
+-- Open terminal in Neovim
+vim.keymap.set("n", "<leader>T", function()
+  vim.cmd.vnew()
+  vim.cmd.term()
+  vim.cmd.wincmd("J")
+  vim.api.nvim_win_set_height(0, 5)
+end, { desc = 'Neovim terminal' })
