@@ -25,9 +25,28 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
-vim.g.mapleader = ","
-vim.keymap.set("i", "<leader>jk", '<Esc>', { desc = "Normal Mode" })
-vim.keymap.set("v", "<leader>jk", '<Esc>', { desc = "Normal Mode" })
+vim.opt.signcolumn = "auto" -- [1 to 9] or auto or auto:[1 to 9]
+
+-- Sets how neovim will display certain whitespace characters in the editor.
+--  See `:help 'list'`
+--  and `:help 'listchars'`
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
+-- vim.cmd('command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument')
+vim.cmd('command! -nargs=0 Prettier :normal! ggVG=')
+vim.cmd('command! -nargs=0 NoEng :setlocal spell spelllang=')
+vim.cmd('command! -nargs=0 Eng :setlocal spell spelllang=en_us')
+
+-- vim.cmd("let g:indentLine_char = '┊'")
+vim.cmd("let g:indentLine_char = '⋅'")
+
+-- vim.g.mapleader = ","
+vim.g.mapleader = " "
+-- vim.keymap.set("i", "<leader>jk", '<Esc>', { desc = "Normal Mode" })
+-- vim.keymap.set("v", "<leader>jk", '<Esc>', { desc = "Normal Mode" })
+vim.keymap.set("i", "<leader>kj", '<Esc>', { desc = "Normal Mode" })
+vim.keymap.set("v", "<leader>kj", '<Esc>', { desc = "Normal Mode" })
 
 -- vim.keymap.set("n", "<C-z>", ':undo<CR>')
 vim.keymap.set("n", "<leader>H", '^', { desc = "Go to beginning of line" })
@@ -52,23 +71,10 @@ vim.keymap.set("n", "<C-c>", "\"+y", { desc = 'Yank to Global clipboard' })
 vim.keymap.set("v", "<C-c>", "\"+y", { desc = 'Yank to Global clipboard' })
 vim.keymap.set("n", "<C-c>", "\"+y", { desc = 'Yank to Global clipboard' })
 
--- Sets how neovim will display certain whitespace characters in the editor.
---  See `:help 'list'`
---  and `:help 'listchars'`
-vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
-
--- vim.cmd('command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument')
-vim.cmd('command! -nargs=0 Prettier :normal! ggVG=')
-vim.cmd('command! -nargs=0 NoEng :setlocal spell spelllang=')
-vim.cmd('command! -nargs=0 Eng :setlocal spell spelllang=en_us')
-
 vim.keymap.set('n', "<leader>n", ':NvimTreeToggle<CR>', { desc = "Nvim Tree" })
--- vim.cmd("let g:indentLine_char = '┊'")
-vim.cmd("let g:indentLine_char = '⋅'")
 
 -- Mapped for testing lua plugins
-vim.keymap.set("n", "<leader>t", '<Plug>PlenaryTestFile', { desc = "Plenary Run Test" })
+vim.keymap.set("n", "<leader>T", '<Plug>PlenaryTestFile', { desc = "Plenary Run Test" })
 
 -- Jump prev and next in Quick fix list
 -- vim.keymap.set("n","<left>",":lprevious<CR>")
@@ -93,9 +99,10 @@ vim.keymap.set("n", "<down>", ":GitGutterNextHunk<CR>", { desc = 'Next Hunk' })
 vim.keymap.set("n", "<leader>?", ":WhichKey<CR>", { desc = 'Show which-key' })
 
 -- Open terminal in Neovim
-vim.keymap.set("n", "<leader>T", function()
-  vim.cmd.vnew()
-  vim.cmd.term()
-  vim.cmd.wincmd("J")
-  vim.api.nvim_win_set_height(0, 5)
-end, { desc = 'Neovim terminal' })
+vim.keymap.set("n", "<leader>t", ":Floaterminal<CR>", { desc = 'Neovim terminal' })
+-- vim.keymap.set("n", "<leader>T", function()
+--   vim.cmd.vnew()
+--   vim.cmd.term()
+--   vim.cmd.wincmd("J")
+--   vim.api.nvim_win_set_height(0, 5)
+-- end, { desc = 'Neovim terminal' })

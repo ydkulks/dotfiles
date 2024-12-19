@@ -48,7 +48,7 @@ lsp.on_attach(function(client, bufnr)
   -- local opts = { buffer = bufnr, remap = false }
 
   local function opts(descValue)
-    return { buffer = bufnr, remap = false, desc = descValue}
+    return { buffer = bufnr, remap = false, desc = descValue }
   end
 
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts("Go to definition"))

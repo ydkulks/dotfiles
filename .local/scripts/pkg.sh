@@ -66,4 +66,7 @@ function my_pkg()
 
     # # Cava - Terminal audio visualizer
     # yay -S cava
+
+    # # Kew - Terminal music player
+    # yay -S kew
 }
