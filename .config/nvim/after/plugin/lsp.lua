@@ -74,6 +74,8 @@ end)
 {'hrsh7th/cmp-path'},
 {'hrsh7th/cmp-nvim-lua'},
 {'L3MON4D3/LuaSnip'},     -- Required
+{ "rafamadriz/friendly-snippets" }
+{ 'saadparwaiz1/cmp_luasnip' }, -- Required
 ]]
 
 cmp.setup({

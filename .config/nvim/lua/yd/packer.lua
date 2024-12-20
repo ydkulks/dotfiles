@@ -6,7 +6,6 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup({ function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-  use 'drewtempelmeyer/palenight.vim'
   -- use 'ellisonleao/gruvbox.nvim'
   use 'folke/tokyonight.nvim'
   -- Post-install/update hook with neovim command
@@ -106,10 +105,18 @@ return require('packer').startup({ function(use)
       -- Autocompletion
       { 'hrsh7th/nvim-cmp' },                  -- Required
       { 'hrsh7th/cmp-nvim-lsp' },              -- Required
-      { 'hrsh7th/cmp-buffer' },
-      { 'hrsh7th/cmp-path' },
-      { 'hrsh7th/cmp-nvim-lua' },
-      { 'L3MON4D3/LuaSnip' }, -- Required
+      { 'hrsh7th/cmp-buffer' },                -- Optional
+      { 'hrsh7th/cmp-path' },                  -- Optional
+      { 'hrsh7th/cmp-nvim-lua' },              -- Optional
+      {
+        'L3MON4D3/LuaSnip',
+        -- VSCode-like snippets for most languages
+        requires = { "rafamadriz/friendly-snippets" }, -- Required
+        config = function()
+          require("luasnip.loaders.from_vscode").lazy_load()
+        end
+      },
+      { 'saadparwaiz1/cmp_luasnip' }, -- Required
     }
   }
 
