@@ -59,6 +59,7 @@ lsp.on_attach(function(client, bufnr)
     vim.lsp.buf.format()
     -- vim.cmd("normal! ggVG=")
   end, opts("Format"))
+  vim.keymap.set("i", "<C-k>", function() vim.lsp.buf.signature_help() end, opts("Signature Help"))
   vim.keymap.set("n", "<left>", function() vim.diagnostic.goto_prev() end, opts("Prev diagnostic"))
   vim.keymap.set("n", "<right>", function() vim.diagnostic.goto_next() end, opts("Next diagnostic"))
   -- vim.keymap.set("n","<left>",":lprevious<CR>")
@@ -78,7 +79,28 @@ end)
 { 'saadparwaiz1/cmp_luasnip' }, -- Required
 ]]
 
+local lspkind = require('lspkind')
 cmp.setup({
+  formatting = ({
+    format = lspkind.cmp_format({
+      mode = 'symbol_text',
+      ellipsis_char = '...',
+
+      before = function(entry, vim_item)
+        vim_item.kind = string.format("%s %s", lspkind.presets.default[vim_item.kind], vim_item.kind)
+        vim_item.menu = ({
+          -- nvim_lsp = "󰅟 ",
+          -- treesitter = "",
+          -- path = "",
+          -- buffer = " ",
+          -- vsnip = "",
+          -- spell = ""
+        })[entry.source.name]
+        return vim_item
+      end
+    })
+  }),
+
   snippet = {
     expand = function(args)
       require("luasnip").lsp_expand(args.body)
@@ -91,6 +113,7 @@ cmp.setup({
     { name = 'luasnip' },
     { name = 'buffer',  keyword_length = 5 },
   }),
+
   experimental = {
     ghost_text = true,
   }

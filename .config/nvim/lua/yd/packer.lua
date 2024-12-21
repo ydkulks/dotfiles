@@ -117,6 +117,7 @@ return require('packer').startup({ function(use)
         end
       },
       { 'saadparwaiz1/cmp_luasnip' }, -- Required
+      { 'onsails/lspkind.nvim' },     -- Optional
     }
   }
 
