@@ -116,9 +116,9 @@ filetype plugin on
  set number
  set relativenumber  
  set background=dark
- "colors slate
+ colors slate
  "colors low
- colors molokai
+ "colors molokai
  "colorscheme dracula
  " colorscheme palenight
  set path+=**
