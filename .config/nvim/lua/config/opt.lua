@@ -39,3 +39,6 @@ vim.cmd('command! -nargs=0 Eng :setlocal spell spelllang=en_us')
 
 -- vim.cmd("let g:indentLine_char = '┊'")
 vim.cmd("let g:indentLine_char = '⋅'")
+
+-- Blinking cursor
+vim.cmd('set guicursor+=a:blinkon250')
