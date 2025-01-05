@@ -1,13 +1,14 @@
 return {
   {
     "VonHeikemen/lsp-zero.nvim",
-    event = "VeryLazy",
+    event = "VeryLazy", -- ColorScheme, FileType
     branchs = "V4.X",
     dependencies = {
       { 'williamboman/mason.nvim',           opts = {} },
       { 'williamboman/mason-lspconfig.nvim', opts = {} },
       -- { 'hrsh7th/nvim-cmp',                  opts = {}, event = "InsertEnter" },
       { 'windwp/nvim-autopairs',             opts = {} },
+      { 'mfussenegger/nvim-jdtls' },
       { "neovim/nvim-lspconfig",             tags = "v1.2.*", opts = {} },
     },
     config = function()
@@ -36,8 +37,9 @@ return {
         automatic_installation = true,
         -- automatic_installation = { exclude = { 'asm_lsp' } }, -- Did not work
         ensure_installed = {
-          'ts_ls', 'html', 'cssls', 'jsonls', 'emmet_ls', 'lua_ls', 'gopls', 'tailwindcss', 'htmx', -- curl https://sh.rustup.rs -sSf | sh
-          'biome',
+          'ts_ls', 'html', 'cssls', 'emmet_ls', 'lua_ls', 'gopls', 'tailwindcss', 'htmx', -- curl https://sh.rustup.rs -sSf | sh
+          -- 'biome', 'jsonls',
+          -- 'jdtls',
           -- 'asm_lsp',
         },
       }
@@ -112,7 +114,6 @@ return {
       if capabilities ~= nil then -- Some buffers might not have lsp
         require("lspconfig").lua_ls.setup { capabilities = capabilities.capabilities() }
       end
-      -- require("vim-react-snippets").lazy_load()
     end
   },
 }

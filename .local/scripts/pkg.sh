@@ -58,9 +58,6 @@ function my_pkg()
     # pass generate site/example2.site 32 --no-symbols
     # pass example.site | gh auth login --with-token
 
-    # # Docker for nvim-llama
-    # sudo apt-get install docker.io
-
     # # Yazi - Terminal file manager
     # yay -S yazi
 
@@ -69,4 +66,16 @@ function my_pkg()
 
     # # Kew - Terminal music player
     # yay -S kew
+
+    # # Typing tutor in terminal
+    # yay -S gtypist
+
+    # # ZSH shell
+    # yay -S zsh
+
+    # # SDKMan for Java, Spring boot, Gradle and Maven
+    # curl -s "https://get.sdkman.io" | bash
+
+    # # HTTPie - API tester
+    # yay -S httpie
 }
