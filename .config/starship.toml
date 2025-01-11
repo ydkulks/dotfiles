@@ -13,7 +13,7 @@ style = 'bold blue'
 
 [cmd_duration]
 style = 'fg:240'
-format = '[ 祥$duration]($style)'
+format = '[ $duration]($style)'
 
 [directory]
 style = 'bold blue'

@@ -68,7 +68,8 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      { 'rafamadriz/friendly-snippets' },
+      -- { 'rafamadriz/friendly-snippets' },
+      { 'ydkulks/friendly-snippets' },
       -- { 'mlaursen/vim-react-snippets' },
       {
         "saghen/blink.cmp",
