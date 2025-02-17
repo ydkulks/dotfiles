@@ -52,7 +52,9 @@ return {
       })
 
       -- NOTE: Custom Border and DiagnosticSign
-      -- vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
+      vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help,
+        { border = 'rounded' })
+      vim.diagnostic.config({ float = { border = "rounded" } })
       vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 
       -- Configure appearance of diagnostic signs
@@ -70,7 +72,24 @@ return {
     dependencies = {
       -- { 'rafamadriz/friendly-snippets' },
       { 'ydkulks/friendly-snippets' },
-      -- { 'mlaursen/vim-react-snippets' },
+      {
+        -- NOTE: DB Connection URL is at g:db_ui_save_location or ~/.local/share/db_ui/connections.json
+        'kristijanhusak/vim-dadbod-ui',
+        dependencies = {
+          { 'tpope/vim-dadbod',                     lazy = true },
+          { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
+        },
+        cmd = {
+          'DBUI',
+          'DBUIToggle',
+          'DBUIAddConnection',
+          'DBUIFindBuffer',
+        },
+        init = function()
+          -- Your DBUI configuration
+          vim.g.db_ui_use_nerd_fonts = 1
+        end,
+      },
       {
         "saghen/blink.cmp",
         -- tags = 'v0.8.*',
@@ -94,6 +113,13 @@ return {
           signature = {
             enabled = true,
             window = { border = 'rounded' }
+          },
+          sources = {
+            -- add vim-dadbod-completion to your completion providers
+            default = { "lsp", "path", "snippets", "buffer", "dadbod" },
+            providers = {
+              dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+            },
           },
 
         },
