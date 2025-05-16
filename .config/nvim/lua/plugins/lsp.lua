@@ -70,8 +70,8 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      -- { 'rafamadriz/friendly-snippets' },
-      { 'ydkulks/friendly-snippets' },
+      { 'rafamadriz/friendly-snippets' },
+      -- { 'ydkulks/friendly-snippets' },
       {
         -- NOTE: DB Connection URL is at g:db_ui_save_location or ~/.local/share/db_ui/connections.json
         'kristijanhusak/vim-dadbod-ui',

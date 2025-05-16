@@ -53,6 +53,7 @@
     font-family: 'JetBrains';
     font-size: 18px;
     word-wrap: break-word;
+    line-height: 150%;
   }
 
   h1,
@@ -175,6 +176,18 @@
   .strike-through {
     text-decoration: line-through;
     color: #a3a3a3;
+  }
+
+  ol li::marker, ul li::marker {
+    color: #96CBFE;
+    font-weight:bold;
+  }
+
+  ul {
+    list-style-type: disc; /* Ensure consistent marker styling */
+  }
+  ol {
+    list-style-type: decimal;
   }
 
   li input[type="checkbox" i]:disabled {
