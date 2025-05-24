@@ -27,42 +27,67 @@ return {
           vim.lsp.buf.format()
         end, opts("Format"))
         -- vim.keymap.set("i", "<C-k>", function() vim.lsp.buf.signature_help() end, opts("Signature Help"))
-        vim.keymap.set("n", "<left>", function() vim.diagnostic.goto_prev() end, opts("Prev diagnostic"))
-        vim.keymap.set("n", "<right>", function() vim.diagnostic.goto_next() end, opts("Next diagnostic"))
+        vim.keymap.set("n", "<left>", function() vim.diagnostic.jump({ count = -1, float = true }) end,
+          opts("Prev diagnostic"))
+        vim.keymap.set("n", "<right>", function() vim.diagnostic.jump({ count = 1, float = true }) end,
+          opts("Next diagnostic"))
       end)
 
       -- NOTE: Language Servers
+      local servers = {
+        'ts_ls', 'html', 'cssls', 'emmet_ls', 'lua_ls', 'gopls', 'tailwindcss', 'htmx', -- curl https://sh.rustup.rs -sSf | sh
+        -- 'biome', 'jsonls',
+        -- 'jdtls',
+        -- 'asm_lsp',
+      }
       require('mason').setup({})
       require('mason-lspconfig').setup {
         automatic_installation = true,
         -- automatic_installation = { exclude = { 'asm_lsp' } }, -- Did not work
-        ensure_installed = {
-          'ts_ls', 'html', 'cssls', 'emmet_ls', 'lua_ls', 'gopls', 'tailwindcss', 'htmx', -- curl https://sh.rustup.rs -sSf | sh
-          -- 'biome', 'jsonls',
-          -- 'jdtls',
-          -- 'asm_lsp',
-        },
+        automatic_enable = servers,
+        ensure_installed = servers,
       }
 
-      -- require('lspconfig').html.setup{}
-      require('mason-lspconfig').setup_handlers({
-        function(server_name)
-          require('lspconfig')[server_name].setup {}
-        end
-      })
+      -- NOTE: New way of setting up lsp servers
+      -- vim.lsp.config('server', {})
+      for _, value in ipairs(servers) do
+        vim.lsp.config(value, {})
+      end
 
       -- NOTE: Custom Border and DiagnosticSign
-      vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help,
-        { border = 'rounded' })
       vim.diagnostic.config({ float = { border = "rounded" } })
-      vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+      -- vim.o.winborder = "rounded" -- too powerful
+      -- vim.lsp.buf.hover({ border = "rounded" })
+      -- vim.lsp.buf.signature_help({ border = "rounded" })
+      ---@diagnostic disable: duplicate-set-field
+      local _original_hover = vim.lsp.buf.hover
+      vim.lsp.buf.hover = function(opts)
+        opts = opts or {}
+        opts.border = opts.border or "rounded" -- Set default if not already specified
+        return _original_hover(opts)
+      end
+
+      ---@diagnostic disable: duplicate-set-field
+      local _original_signature_help = vim.lsp.buf.signature_help
+      vim.lsp.buf.signature_help = function(opts)
+        opts = opts or {}
+        opts.border = opts.border or "rounded"
+        return _original_signature_help(opts)
+      end
 
       -- Configure appearance of diagnostic signs
-      local signs = { Error = "", Warn = "", Hint = "", Info = "" }
-      for type, icon in pairs(signs) do
-        local hl = "DiagnosticSign" .. type
-        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-      end
+      -- local signsIcons = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+      local signsIcons = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+      vim.diagnostic.config({
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = signsIcons.Error,
+            [vim.diagnostic.severity.WARN] = signsIcons.Warning,
+            [vim.diagnostic.severity.HINT] = signsIcons.Hint,
+            [vim.diagnostic.severity.INFO] = signsIcons.Information,
+          }
+        }
+      })
     end
   },
 

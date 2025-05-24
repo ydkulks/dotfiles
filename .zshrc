@@ -1,12 +1,12 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 ## Display pokemon pixel art
-pokemon-colorscripts --no-title -r 1-8
+# pokemon-colorscripts --no-title -r 1-8
 
 ## Auto "cd" when entering just a path
 setopt  autocd
@@ -15,7 +15,7 @@ setopt  autocd
 alias ls='ls --color'
 
 ## Starship (custom prompt)
-# eval "$(starship init zsh)" #curl -sS https://starship.rs/install.sh | sh
+eval "$(starship init zsh)" #curl -sS https://starship.rs/install.sh | sh
 
 ## Download Zinit, if it's not there yet
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -29,7 +29,7 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 ## Powerlevel10k (prompt customization)
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+# zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 ## Zinit Plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -86,4 +86,4 @@ source /home/yd/Projects/dotfiles/.local/scripts/pandoc.sh
 source /home/yd/Projects/dotfiles/.local/scripts/alias.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
