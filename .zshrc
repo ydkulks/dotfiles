@@ -84,6 +84,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 ## Source custom shell scripts
 source /home/yd/Projects/dotfiles/.local/scripts/pandoc.sh
 source /home/yd/Projects/dotfiles/.local/scripts/alias.sh
+source /home/yd/Projects/dotfiles/.local/scripts/exports.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
