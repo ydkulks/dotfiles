@@ -20,6 +20,9 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 # export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/.local/opt/go/bin # Webi installer path
 
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh" # Created while installing golang with webi
+
 ## XDG Base Directory (Clean $HOME directory)
 export NVM_DIR="$XDG_DATA_HOME"/nvm
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"

@@ -25,7 +25,7 @@ return {
           local body = { model = options.model, stream = true }
 
           return "curl --silent --no-buffer -X POST http://" ..
-          options.host .. ":" .. options.port .. "/api/chat -d $body"
+              options.host .. ":" .. options.port .. "/api/chat -d $body"
         end,
         -- The command for the Ollama service. You can use placeholders $prompt, $model and $body (shellescaped).
         -- This can also be a command string.
@@ -43,6 +43,18 @@ return {
       --   extract = "```$filetype\n(.-)```",
       --   model = "llama3.1"
       -- }
+    end
+  },
+  {
+    "supermaven-inc/supermaven-nvim",
+    event = "InsertEnter",
+    config = function()
+      require("supermaven-nvim").setup({
+        keymaps = {
+          accept_word = "<leader><Tab>",
+        },
+        ignore_filetypes = { "txt", "json", ".env", ".gitignore", "markdown" },
+      })
     end
   }
 }
