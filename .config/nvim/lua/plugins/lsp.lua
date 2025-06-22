@@ -2,7 +2,7 @@ return {
   {
     "VonHeikemen/lsp-zero.nvim",
     event = "VeryLazy", -- ColorScheme, FileType
-    branchs = "V4.X",
+    branchs = "v4.x",
     dependencies = {
       { 'williamboman/mason.nvim',           opts = {} },
       { 'williamboman/mason-lspconfig.nvim', opts = {} },
@@ -35,9 +35,11 @@ return {
 
       -- NOTE: Language Servers
       local servers = {
-        'ts_ls', 'html', 'cssls', 'emmet_ls', 'lua_ls', 'gopls', 'tailwindcss', 'htmx', -- curl https://sh.rustup.rs -sSf | sh
-        -- 'biome', 'jsonls',
-        -- 'jdtls',
+        'ts_ls', 'html', 'cssls', 'emmet_ls', 'lua_ls', 'gopls', 'tailwindcss',
+        -- 'htmx', -- curl https://sh.rustup.rs -sSf | sh
+        -- 'jsonls',
+        'jdtls',            -- Java
+        'pyright', 'pylsp', -- Python
         -- 'asm_lsp',
       }
       require('mason').setup({})
@@ -55,7 +57,11 @@ return {
       end
 
       -- NOTE: Custom Border and DiagnosticSign
-      vim.diagnostic.config({ float = { border = "rounded" } })
+      vim.diagnostic.config({
+        float = {
+          border = "rounded"
+        }
+      })
       -- vim.o.winborder = "rounded" -- too powerful
       -- vim.lsp.buf.hover({ border = "rounded" })
       -- vim.lsp.buf.signature_help({ border = "rounded" })
@@ -79,6 +85,9 @@ return {
       -- local signsIcons = { Error = " ", Warning = " ", Hint = " ", Information = " " }
       local signsIcons = { Error = " ", Warning = " ", Hint = " ", Information = " " }
       vim.diagnostic.config({
+        virtual_text = {
+          current_line = true,
+        },
         signs = {
           text = {
             [vim.diagnostic.severity.ERROR] = signsIcons.Error,
@@ -86,7 +95,8 @@ return {
             [vim.diagnostic.severity.HINT] = signsIcons.Hint,
             [vim.diagnostic.severity.INFO] = signsIcons.Information,
           }
-        }
+        },
+        severity_sort = true,
       })
     end
   },
@@ -118,20 +128,20 @@ return {
       {
         "saghen/blink.cmp",
         -- tags = 'v0.8.*',
-        version = "v0.8.2", -- Releases has prebuilt binaries for fuzzy finding
+        version = "v1.3.*", -- Releases has prebuilt binaries for fuzzy finding
         opts = {
           keymap = {
             preset = 'default',
             ['<C-n>'] = { 'select_next' },
-            ['<C-p'] = { 'select_prev' },
-            ['C-b'] = { 'scroll_documentation_up' },
-            ['C-f'] = { 'scroll_documentation_down' },
+            ['<C-p>'] = { 'select_prev' },
+            ['<C-b>'] = { 'scroll_documentation_up' },
+            ['<C-f>'] = { 'scroll_documentation_down' },
           },
 
           completion = {
             accept = { auto_brackets = { enabled = true } },
-            ghost_text = { enabled = true },
-            -- menu = { border = 'rounded' },
+            -- ghost_text = { enabled = true },
+            menu = { border = 'rounded' },
             documentation = { window = { border = 'rounded' } }
           },
 
@@ -140,8 +150,9 @@ return {
             window = { border = 'rounded' }
           },
           sources = {
-            -- add vim-dadbod-completion to your completion providers
             default = { "lsp", "path", "snippets", "buffer", "dadbod" },
+            per_filetype = { 'snippets', 'dadbod', 'buffer' },
+            -- add vim-dadbod-completion to your completion providers
             providers = {
               dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
             },
@@ -161,11 +172,10 @@ return {
     },
     config = function()
       require("lspconfig").lua_ls.setup {}
+      local capabilities = require('blink.cmp').get_lsp_capabilities()
+      local lspconfig = require('lspconfig')
 
-      local capabilities = require('blink.cmp').get_lsp
-      if capabilities ~= nil then -- Some buffers might not have lsp
-        require("lspconfig").lua_ls.setup { capabilities = capabilities.capabilities() }
-      end
+      lspconfig['lua_ls'].setup({ capabilities = capabilities })
     end
   },
 }

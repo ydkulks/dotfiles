@@ -41,4 +41,9 @@ vim.cmd('command! -nargs=0 Eng :setlocal spell spelllang=en_us')
 vim.cmd("let g:indentLine_char = '⋅'")
 
 -- Blinking cursor
-vim.cmd('set guicursor+=a:blinkon250')
+vim.cmd('set guicursor=n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,t:block-blinkon500-blinkoff500-TermCursor')
+vim.cmd('set guicursor+=a:blinkwait700-blinkoff400-blinkon250')
+
+-- Better indenting in visual mode
+vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
+vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })

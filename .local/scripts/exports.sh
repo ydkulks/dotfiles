@@ -17,7 +17,8 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 
 ## Golang env
 #sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.20.11.linux-amd64.tar.gz
-export PATH=$PATH:/usr/local/go/bin
+# export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/.local/opt/go/bin # Webi installer path
 
 ## XDG Base Directory (Clean $HOME directory)
 export NVM_DIR="$XDG_DATA_HOME"/nvm

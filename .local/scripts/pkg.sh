@@ -36,6 +36,8 @@ function my_pkg()
 		# # Golang installation
 		# wget https://golang.org/dl/go1.21.4.linux-amd64.tar.gz
     # sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.21.4.linux-amd64.tar.gz
+    # # OR use webi installer instead
+    # curl -sS https://webi.sh/golang | sh
     #
     # # Luarocks for neovim plugins
     # sudo apt-get install luarocks

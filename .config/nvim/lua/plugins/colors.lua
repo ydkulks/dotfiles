@@ -13,6 +13,8 @@ return {
         vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" }),
         vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" }),
         vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#3b4261" }),
+        vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { link = "FloatBorder" }),
+        vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { link = "FloatBorder" }),
 
         vim.api.nvim_set_hl(0, "SignColumn", { ctermbg = "none" }),
         vim.api.nvim_set_hl(0, "GitSignsAdd", { bg = "none", fg = "#9ece6a" }),
