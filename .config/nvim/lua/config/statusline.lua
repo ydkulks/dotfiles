@@ -45,39 +45,39 @@ local function vim_mode()
     return 'NORMAL'
   elseif mode == 'v' then
     colorScheme("Yellow")
-    print(" ")
+    -- print(" ")
     return 'VISUAL'
   elseif mode == 'V' then
     colorScheme("Yellow")
-    print(" ")
+    -- print(" ")
     return 'V-LINE'
   elseif mode == '^V' then
     colorScheme("Yellow")
-    print(" ")
+    -- print(" ")
     return 'V-BLOCK'
   elseif mode == 'i' then
     colorScheme("Green")
-    print(" ")
+    -- print(" ")
     return 'INSERT'
   elseif mode == 'R' then
     colorScheme("Purple")
-    print(" ")
+    -- print(" ")
     return 'REPLACE'
   elseif mode == 'c' then
     colorScheme("Red")
-    print(" ")
+    -- print(" ")
     return 'COMMAND'
   elseif mode == 's' then
     colorScheme("Yellow")
-    print(" ")
+    -- print(" ")
     return 'SELECT'
   elseif mode == 'no' then
     colorScheme("Purple")
-    print(" ")
+    -- print(" ")
     return 'CHANGE'
   else
     colorScheme("White")
-    print(" ")
+    -- print(" ")
     -- return 'UNKNOWN'
     return mode
   end
