@@ -4,7 +4,7 @@ return {
     event = "CmdlineEnter",
     config = function()
       require("gen").setup({
-        -- model = "mistral",                   -- The default model to use.
+        -- model = "qwen3:8b",                   -- The default model to use.
         model = "llama3.2",     -- The default model to use.
         -- model = "deepseek-r1",     -- The default model to use.
         quit_map = "q",         -- set keymap for close the response window
@@ -54,6 +54,7 @@ return {
           accept_word = "<leader><Tab>",
         },
         ignore_filetypes = { "txt", "json", ".env", ".gitignore", "markdown" },
+        log_level = "off", -- set to "off" to disable logging completely
       })
     end
   }
