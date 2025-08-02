@@ -83,7 +83,7 @@ return {
 
       -- Configure appearance of diagnostic signs
       -- local signsIcons = { Error = " ", Warning = " ", Hint = " ", Information = " " }
-      local signsIcons = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+      local signsIcons = { Error = " ", Warning = " ", Hint = " ", Information = " " }
       vim.diagnostic.config({
         virtual_text = {
           current_line = true,
