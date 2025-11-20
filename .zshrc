@@ -62,6 +62,8 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^y' autosuggest-accept
 
+bindkey '^L' clear-screen
+
 ## Cursor shape
 # 0  ⇒  blinking block.
 # 1  ⇒  blinking block (default).
@@ -88,3 +90,8 @@ source /home/yd/Projects/dotfiles/.local/scripts/exports.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/yd/.config/.dart-cli-completion/zsh-config.zsh ]] && . /home/yd/.config/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]

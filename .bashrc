@@ -116,6 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+bind '"\C-l": clear-screen'
 
 ################### Following code are custome ################################
 source "${HOME}/Projects/dotfiles/.local/scripts/.main.sh"

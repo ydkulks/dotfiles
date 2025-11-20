@@ -11,4 +11,4 @@ eval "$(starship init bash)" #curl -sS https://starship.rs/install.sh | sh
 bind 'set completion-ignore-case on'
 
 ## Display pokemon pixel art
-pokemon-colorscripts --no-title -r 1-8
+# pokemon-colorscripts --no-title -r 1-8

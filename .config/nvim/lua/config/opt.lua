@@ -30,7 +30,7 @@ vim.opt.signcolumn = "auto" -- [1 to 9] or auto or auto:[1 to 9]
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = '⋅ ', trail = '·', nbsp = '␣' }
 
 -- vim.cmd('command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument')
 vim.cmd('command! -nargs=0 Prettier :normal! ggVG=')
