@@ -1,13 +1,21 @@
 local fn = vim.fn
 
--- Highlight groups
--- Orange: #ff9e64
--- Blue: #7aa2f7
--- White: #a9b1d6
-vim.cmd("highlight TabLine gui=italic guifg=#565f89 guibg=#1B1C27")
--- vim.cmd("highlight TabLineSel gui=bold guifg=#a9b1d6 guibg=#1B1C27")
-vim.cmd("highlight TabLineSel gui=bold,italic guifg=#a9b1d6 guibg=#1B1C27")
-vim.cmd("highlight TabLineFill guibg=#1B1C27")
+local color_palette = {
+  background = "#1E2127",
+  foreground = "#EBEEF4",
+  black = "#30353F",
+  blue = "#85A4C3",
+  cyan = "#8CC1D1",
+  green = "#A6BF91",
+  purple = "#82819F",
+  red = "#C06771",
+  white = "#E4E8F0",
+  yellow = "#EACC90",
+  brightBlack = "#535D71",
+}
+vim.api.nvim_set_hl(0, "TabLine", { fg = color_palette.brightBlack, bg = color_palette.background, italic = true })
+vim.api.nvim_set_hl(0, "TabLineSel", { fg = color_palette.white, bg = color_palette.background, bold = true, italic = true })
+vim.api.nvim_set_hl(0, "TabLineFill", { bg = color_palette.background })
 
 -- Store options directly, or make them a local table
 -- M.options = {
@@ -107,7 +115,7 @@ local function generate_tabline_string(opts)
         --   icon_color = ''
         -- end
         -- s = s .. icon_color .. icon .. reset_color .. fn.fnamemodify(bufname, opts.fnamemodify)
-        s = s .. icon  .. fn.fnamemodify(bufname, opts.fnamemodify)
+        s = s .. icon .. fn.fnamemodify(bufname, opts.fnamemodify)
       end
     else
       s = s .. opts.no_name

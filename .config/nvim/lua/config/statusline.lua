@@ -29,36 +29,95 @@ local function git_branch()
   end
 end
 
+-- FIX: Load color_palette conditionally
+local color_palette = {
+  ["default"] = {
+    background = "#1E2127",
+    foreground = "#EBEEF4",
+    black = "#30353F",
+    blue = "#85A4C3",
+    cyan = "#8CC1D1",
+    green = "#A6BF91",
+    purple = "#82819F",
+    red = "#C06771",
+    white = "#E4E8F0",
+    yellow = "#EACC90",
+    brightBlack = "#535D71",
+
+    -- black = "#2A2A2A",
+    -- blue = "#85C1FC",
+    -- cyan = "#88C0D0",
+    -- green = "#A3BE8C",
+    -- purple = "#AA9BF5",
+    -- red = "#BF616A",
+    -- white = "#D8DEE9",
+    -- yellow = "#EFB080",
+    -- background = "#1A1A1A",
+    -- foreground = "#D8DEE9",
+  },
+  ["cursor_dark"] = {
+    background = "#1A1A1A",
+    foreground = "#D8DEE9",
+    black = "#2A2A2A",
+    blue = "#85C1FC",
+    cyan = "#88C0D0",
+    green = "#A3BE8C",
+    purple = "#AA9BF5",
+    red = "#BF616A",
+    white = "#D8DEE9",
+    yellow = "#EFB080",
+    brightBlack = "#505050",
+  },
+  ["cursor_dark-midnight"] = {
+    background = "#282c34",
+    foreground = "#abb2bf",
+    black = "#282c34",
+    blue = "#61afef",
+    cyan = "#56b6c2",
+    green = "#98c379",
+    purple = "#c678dd",
+    red = "#e06c75",
+    white = "#abb2bf",
+    yellow = "#e5c07b",
+    brightBlack = "#5c6370",
+  }
+}
+local current_colorscheme = color_palette[vim.g.colors_name] or color_palette["default"]
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+--   callback = function()
+--     current_colorscheme = color_palette[vim.g.colors_name] or color_palette["default"]
+--   end,
+-- })
+
 -- Change the color of the statusline dynamically based on the current mode
 ---@param color "Blue" | "Yellow" | "Green" | "Purple" | "Red" | "White"
 local function colorScheme(color)
   if color == "Blue" then
     -- Blue
-    vim.cmd("highlight StatusLine ctermfg=235 ctermbg=33 cterm=bold guifg=#292d3e guibg=#7aa2f7 gui=bold")
-    vim.cmd("highlight StatusLineIcon ctermfg=114 guifg=#7aa2f7 guibg=#1B1C27")
+    vim.api.nvim_set_hl(0, "StatusLine", { fg = current_colorscheme.background, bg = current_colorscheme.blue, bold = true })
+    vim.api.nvim_set_hl(0, "StatusLineIcon", { fg = current_colorscheme.blue, bg = current_colorscheme.background })
   elseif color == "Yellow" then
     -- Yellow
-    vim.cmd("highlight StatusLine ctermfg=235 ctermbg=226 cterm=bold guifg=#292d3e guibg=#ff9e64 gui=bold")
-    vim.cmd("highlight StatusLineIcon ctermfg=114 guifg=#ff9e64 guibg=#1B1C27")
+    vim.api.nvim_set_hl(0, "StatusLine", { fg = current_colorscheme.background, bg = current_colorscheme.yellow, bold = true })
+    vim.api.nvim_set_hl(0, "StatusLineIcon", { fg = current_colorscheme.yellow, bg = current_colorscheme.background })
   elseif color == "Green" then
     -- Green
-    vim.cmd("highlight StatusLine ctermfg=235 ctermbg=114 cterm=bold guifg=#292d3e guibg=#98c379 gui=bold")
-    vim.cmd("highlight StatusLineIcon ctermfg=114 guifg=#98c379 guibg=#1B1C27")
+    vim.api.nvim_set_hl(0, "StatusLine", { fg = current_colorscheme.background, bg = current_colorscheme.green, bold = true })
+    vim.api.nvim_set_hl(0, "StatusLineIcon", { fg = current_colorscheme.green, bg = current_colorscheme.background })
   elseif color == "Purple" then
     -- Purple
-    vim.cmd("highlight StatusLine ctermfg=235 ctermbg=114 cterm=bold guifg=#292d3e guibg=#bb9af7 gui=bold")
-    vim.cmd("highlight StatusLineIcon ctermfg=114 guifg=#bb9af7 guibg=#1B1C27")
+    vim.api.nvim_set_hl(0, "StatusLine", { fg = current_colorscheme.background, bg = current_colorscheme.purple, bold = true })
+    vim.api.nvim_set_hl(0, "StatusLineIcon", { fg = current_colorscheme.purple, bg = current_colorscheme.background })
   elseif color == "Red" then
     -- Red
-    vim.cmd("highlight StatusLine ctermfg=235 ctermbg=226 cterm=bold guifg=#292d3e guibg=#f7768e gui=bold")
-    vim.cmd("highlight StatusLineIcon ctermfg=114 guifg=#f7768e guibg=#1B1C27")
+    vim.api.nvim_set_hl(0, "StatusLine", { fg = current_colorscheme.background, bg = current_colorscheme.red, bold = true })
+    vim.api.nvim_set_hl(0, "StatusLineIcon", { fg = current_colorscheme.red, bg = current_colorscheme.background })
   elseif color == "White" then
     -- White
-    vim.cmd("highlight StatusLine ctermfg=235 ctermbg=114 cterm=bold guifg=#292d3e guibg=#c0caf5 gui=bold")
-    vim.cmd("highlight StatusLineIcon ctermfg=114 guifg=#c0caf5 guibg=#1B1C27")
+    vim.api.nvim_set_hl(0, "StatusLine", { fg = current_colorscheme.background, bg = current_colorscheme.white, bold = true })
+    vim.api.nvim_set_hl(0, "StatusLineIcon", { fg = current_colorscheme.white, bg = current_colorscheme.background })
   end
-  vim.cmd("highlight StatusLineComment gui=italic guifg=#565f89 guibg=#1B1C27 cterm=italic ctermbg=NONE")
-  -- vim.api.nvim_set_hl(0, "StatusLineSecendery", { bg = "#565f89", fg = "#565f89" })
+  vim.api.nvim_set_hl(0, "StatusLineComment", { fg = current_colorscheme.brightBlack, bg = current_colorscheme.background })
 end
 
 -- Temp Vim statusbar config
