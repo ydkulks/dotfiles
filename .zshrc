@@ -95,3 +95,15 @@ source /home/yd/Projects/dotfiles/.local/scripts/exports.sh
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /home/yd/.config/.dart-cli-completion/zsh-config.zsh ]] && . /home/yd/.config/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
+
+
+# opencode
+export PATH=/home/yd/.opencode/bin:$PATH
+
+. "$HOME/.local/share/../bin/env"
+
+eval "$(zoxide init zsh)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/yd/.sdkman"
+[[ -s "/home/yd/.sdkman/bin/sdkman-init.sh" ]] && source "/home/yd/.sdkman/bin/sdkman-init.sh"

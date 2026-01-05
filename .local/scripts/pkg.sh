@@ -83,4 +83,7 @@ function my_pkg()
 
     # # HTTPie - API tester
     # yay -S httpie
+
+    # # zoxide - better cd
+    # yay -S zoxide
 }
