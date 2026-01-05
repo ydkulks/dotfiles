@@ -23,3 +23,13 @@ vim.api.nvim_create_autocmd('TermOpen', {
     vim.opt.relativenumber = false
   end
 })
+
+-- Disable semantic tokens for java lsp
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client ~= nil and client.name == 'jdtls' then
+      client.server_capabilities.semanticTokensProvider = nil
+    end
+  end
+})

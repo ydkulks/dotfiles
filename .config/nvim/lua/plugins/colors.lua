@@ -40,4 +40,13 @@ return {
     end
 
   },
+  {
+    "norcalli/nvim-colorizer.lua",
+    event = "VeryLazy",
+    -- lazy = false,
+    -- priority = 1000,
+    config = function()
+      require("colorizer").setup()
+    end
+  }
 }

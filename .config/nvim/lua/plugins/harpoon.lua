@@ -21,5 +21,49 @@ return {
 
       vim.keymap.set("n", "<leader>5", function() tmux.gotoTerminal(1) end, { desc = 'Harpoon Term' });
     end
+  },
+  {
+    dir = "/home/yd/Projects/AST.nvim",
+    config = function()
+      require("AST").setup({
+        displayNodeNames = true,
+        nodeTypeRequired = {
+          typescriptreact = {
+            -- Functions
+            { "function_declaration", "󰡱 " },
+            { "arrow_function", "󰡱 " },
+            { "method_definition", "󰡱 " },
+
+            -- Classes and Types
+            { "class_declaration", " " },
+            { "interface_declaration", " " },
+            { "type_alias_declaration", " " },
+            { "enum_declaration", " " },
+
+            -- React Components
+            { "function_component_declaration", "󰡱 " },
+            { "class_component_declaration", " " },
+
+            -- JSX Elements
+            { "jsx_element", "󰜈 " },
+            { "jsx_self_closing_element", "󰜈 " },
+
+            -- Control Flow
+            { "if_statement", " " },
+            { "for_statement", " " },
+            { "while_statement", " " },
+            { "switch_statement", "󰒉 " },
+
+            -- Imports/Exports
+            { "import_statement", "󰋺 " },
+            { "export_statement", "󰋺 " },
+
+            -- Variable declarations
+            { "variable_declaration", "󰀫 " },
+            { "lexical_declaration", "󰀫 " },
+          }
+        }
+      })
+    end
   }
 }

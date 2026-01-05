@@ -8,7 +8,7 @@ return {
       { 'williamboman/mason-lspconfig.nvim', opts = {} },
       -- { 'hrsh7th/nvim-cmp',                  opts = {}, event = "InsertEnter" },
       { 'windwp/nvim-autopairs',             opts = {} },
-      -- { 'mfussenegger/nvim-jdtls' }, -- Java
+      { 'mfussenegger/nvim-jdtls' }, -- Java
       { "neovim/nvim-lspconfig",             tags = "v1.2.*", opts = {} },
     },
     config = function()
@@ -38,7 +38,7 @@ return {
         'ts_ls', 'html', 'cssls', 'emmet_ls', 'lua_ls', 'gopls', 'tailwindcss',
         -- 'htmx', -- curl https://sh.rustup.rs -sSf | sh
         -- 'jsonls',
-        -- 'jdtls',            -- Java
+        'jdtls',            -- Java
         'pyright', 'pylsp', -- Python
         -- 'asm_lsp',
       }
