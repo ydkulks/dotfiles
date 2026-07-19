@@ -116,6 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+bind '"\C-l": clear-screen'
 
 ################### Following code are custome ################################
 source "${HOME}/Projects/dotfiles/.local/scripts/.main.sh"
@@ -141,3 +142,10 @@ source /home/yd/Projects/dotfiles/.local/scripts/compress.sh
 source /home/yd/Projects/dotfiles/.local/scripts/exports.sh
 source /home/yd/Projects/dotfiles/.local/scripts/pandoc.sh
 source /home/yd/Projects/dotfiles/.local/scripts/ffmpeg.sh
+. "/home/yd/.local/share/cargo/env"
+
+. "$HOME/.local/share/../bin/env"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/yd/.sdkman"
+[[ -s "/home/yd/.sdkman/bin/sdkman-init.sh" ]] && source "/home/yd/.sdkman/bin/sdkman-init.sh"

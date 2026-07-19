@@ -8,8 +8,8 @@
 # curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-mocha.toml
 # curl -LO --output-dir ~/.config/alacritty https://github.com/zatchheems/tokyo-night-alacritty-theme
 import = [
-  # "~/.config/alacritty/catppuccin-mocha.toml"
-  "~/.config/alacritty/tokyo-night-alacritty-theme/tokyo-night.toml"
+  "~/.config/alacritty/cursor-dark.toml"
+  # "~/.config/alacritty/tokyo-night-alacritty-theme/tokyo-night.toml"
   # "~/.config/alacritty/tokyo-night-alacritty-theme/tokyo-night-storm.toml"
 ]
 
@@ -17,32 +17,32 @@ import = [
 TERM = "xterm-256color"
 
 # WSL2 specific config
-[shell]
-program = "ubuntu2204.exe"
+#[shell]
+#program = "ubuntu2204.exe"
 
 [window]
-dimensions = { columns = 122, lines = 32 }
-position = { x = 125, y = 225 }
-padding = { x = 5, y = 5 }
+# dimensions = { columns = 122, lines = 32 }
+# position = { x = 125, y = 225 }
+padding = { x = 20, y = 15 }
 # padding = { x = 5, y = 10 }
-decorations = "None"
-opacity = 0.97
+#decorations = "None"
+opacity = 0.9
 blur = true
 dynamic_title = true
 
 [font]
-normal = { family = "UbuntuMono NF"}
-size = 13.0
-offset = { x = 1, y = 1 }
-glyph_offset = { x = 0, y = 1 }
+normal = { family = "UbuntuMono Nerd Font"}
+size = 12.0
+# offset = { x = 1, y = 1 }
+#glyph_offset = { x = 0, y = 1 }
 
 [colors]
 cursor = { text = "CellBackground", cursor = "#61AFEF"}
 
 [colors.primary]
-foreground = "#B1B4B8"
+# foreground = "#B1B4B8"
 # background = "#262626"
-background = "#292929"
+# background = "#292929"
 
 [bell]
 animation = "Linear"

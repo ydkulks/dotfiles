@@ -36,6 +36,11 @@ function my_pkg()
 		# # Golang installation
 		# wget https://golang.org/dl/go1.21.4.linux-amd64.tar.gz
     # sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.21.4.linux-amd64.tar.gz
+    # # OR use webi installer instead
+    # curl -sS https://webi.sh/golang | sh
+    #
+    # # Luarocks for neovim plugins
+    # sudo apt-get install luarocks
 
     # # Terminal text based browser
     # sudo apt-get install links2
@@ -58,9 +63,6 @@ function my_pkg()
     # pass generate site/example2.site 32 --no-symbols
     # pass example.site | gh auth login --with-token
 
-    # # Docker for nvim-llama
-    # sudo apt-get install docker.io
-
     # # Yazi - Terminal file manager
     # yay -S yazi
 
@@ -69,4 +71,46 @@ function my_pkg()
 
     # # Kew - Terminal music player
     # yay -S kew
+
+    # # Typing tutor in terminal
+    # yay -S gtypist
+
+    # # ZSH shell
+    # yay -S zsh
+
+    # # SDKMan for Java, Spring boot, Gradle and Maven
+    # curl -s "https://get.sdkman.io" | bash
+
+    # # HTTPie - API tester
+    # yay -S httpie
+
+    # # zoxide - better cd
+    # yay -S zoxide
+}
+
+function arch_pkg() {
+  echo 'Installing packages from AUR'
+  echo '============================'
+  sudo pacman -Syu
+  sudo pacman -S yay
+  yay -S base-devel
+  curl -sS https://starship.rs/install.sh | sh
+  yay -S git
+  yay -S gh
+  yay -S neovim
+  yay -S zsh
+  yay -S python
+  yay -S nvm
+  yay -S go
+  yay -S yazi
+  yay -S pandoc
+  yay -S docker docker-compose
+  yay -S fzf
+  yay -S zoxide
+  yay -S fd
+  yay -S ripgrep
+  yay -S btop
+  yay -S ffmpeg
+  yay -S neofetch
+  yay -S git-delta
 }

@@ -1,0 +1,10 @@
+theme = tokyonight
+cursor-style = block
+cursor-style-blink = true
+cursor-color = #61AFEF
+window-decoration = false
+mouse-hide-while-typing = true
+font-size = 11
+window-padding-x = 10
+window-padding-y = 1
+background-opacity = 0.9

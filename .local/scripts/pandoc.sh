@@ -7,10 +7,11 @@ function mdViewer(){
     # Input is the path to markdown file
     local input="$1"
     # echo 'Viewing '$input' markdown file'
-    pandoc --metadata title="MarkdownViewer" --standalone --template ${HOME}/Projects/dotfiles/pandoc_template.html $input -o ~/MarkdownViewer.html
+    pandoc --metadata title="MarkdownViewer" --standalone --template ${HOME}/Projects/dotfiles/pandoc_template.html $input -o ${HOME}/MarkdownViewer.html --lua-filter=${HOME}/Projects/dotfiles/blockquotes.lua
     # cmd.exe /C start /mnt/c/MarkdownViewer.html #only for wsl setup
   else
-    sudo apt-get install pandoc
+    # sudo apt-get install pandoc
+    yay -S pandoc
   fi
 }
 

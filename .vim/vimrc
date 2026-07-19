@@ -117,8 +117,8 @@ filetype plugin on
  set relativenumber  
  set background=dark
  "colors slate
- "colors low
- colors molokai
+ colors cursor-dark-midnight
+ "colors molokai
  "colorscheme dracula
  " colorscheme palenight
  set path+=**
@@ -135,7 +135,7 @@ filetype plugin on
  set laststatus=2
  set title
  "set spell
- set cursorline
+ "set cursorline
  set completeopt+=menuone,longest
  "for folding/hiding lines of code/text
  set foldmethod=indent
@@ -155,11 +155,11 @@ filetype plugin on
 " endif
 
 " Custom Highlights
-hi Normal guibg=NONE ctermbg=NONE
-hi CursorLine term=NONE guibg=gray20 cterm=NONE ctermbg=4
+"hi Normal guibg=NONE ctermbg=NONE
+"hi CursorLine term=NONE guibg=gray20 cterm=NONE ctermbg=4
 
  "Setting leader key
- let mapleader = ","
+ let mapleader = " "
 
 let g:netrw_winsize=-28
 let g:netrw_banner=0
@@ -181,8 +181,8 @@ noswapfile
  "Redo
  "nnoremap <C-S-Z> <esc>:redo<CR>
  "Esc alias
- inoremap <leader>jk <esc>
- vnoremap <leader>jk <esc>
+ inoremap <leader>kj <esc>
+ vnoremap <leader>kj <esc>
 
 ""VISUAL BLOCK not working
 " nnoremap <leader>v <c-v>
@@ -211,8 +211,8 @@ nnoremap J <c-e>
 nnoremap K <c-y>
 
 "80 character column limit
-highlight OverLength ctermbg=0 ctermfg=1
-match OverLength /\%81v.\+/
+"highlight OverLength ctermbg=0 ctermfg=1
+"match OverLength /\%81v.\+/
 "set colorcolumn=100
 "highlight ColorColumn ctermbg=0 guibg=gray30
 
