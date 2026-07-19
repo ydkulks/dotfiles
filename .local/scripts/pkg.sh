@@ -87,3 +87,30 @@ function my_pkg()
     # # zoxide - better cd
     # yay -S zoxide
 }
+
+function arch_pkg() {
+  echo 'Installing packages from AUR'
+  echo '============================'
+  sudo pacman -Syu
+  sudo pacman -S yay
+  yay -S base-devel
+  curl -sS https://starship.rs/install.sh | sh
+  yay -S git
+  yay -S gh
+  yay -S neovim
+  yay -S zsh
+  yay -S python
+  yay -S nvm
+  yay -S go
+  yay -S yazi
+  yay -S pandoc
+  yay -S docker docker-compose
+  yay -S fzf
+  yay -S zoxide
+  yay -S fd
+  yay -S ripgrep
+  yay -S btop
+  yay -S ffmpeg
+  yay -S neofetch
+  yay -S git-delta
+}

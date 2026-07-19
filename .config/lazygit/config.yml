@@ -1,0 +1,24 @@
+gui:
+  expandFocusedSidePanel: true
+  nerdFontsVersion: 3
+  branchColorPatterns:
+    'feature-*': blue
+  authorColors:
+    '*': "#535D71"
+    'ydkulks': blue
+  theme:
+    activeBorderColor:
+      - green
+      - bold
+    inactiveBorderColor:
+      - "#535D71"
+    selectedLineBgColor:
+      - "#30353F"
+      - bold
+    searchingActiveBorderColor:
+      - cyan
+      - bold
+git:
+  pagers:
+    - pager: delta --dark --paging=never
+      colorArg: always
