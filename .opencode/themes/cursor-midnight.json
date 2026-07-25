@@ -1,0 +1,229 @@
+{
+  "$schema": "https://opencode.ai/theme.json",
+  "defs": {
+    "cursor_midnight_bg": "#1E2127",
+    "cursor_midnight_fg": "#EBEEF4",
+    "cursor_midnight_sel": "#21252B",
+    "cursor_midnight_black": "#30353F",
+    "cursor_midnight_br_black": "#535D71",
+    "cursor_midnight_red": "#C06771",
+    "cursor_midnight_dk_red": "#4F2A2F",
+    "cursor_midnight_green": "#A6BF91",
+    "cursor_midnight_dk_green": "#374030",
+    "cursor_midnight_yellow": "#EACC90",
+    "cursor_midnight_dk_yellow": "#4A402E",
+    "cursor_midnight_blue": "#85A4C3",
+    "cursor_midnight_dk_blue": "#313C47",
+    "cursor_midnight_purple": "#82819F",
+    "cursor_midnight_br_purple": "#B692B0",
+    "cursor_midnight_cyan": "#8CC1D1",
+    "cursor_midnight_br_cyan": "#93BDBD",
+    "cursor_midnight_white": "#E4E8F0"
+  },
+  "theme": {
+    "primary": {
+      "dark": "cursor_midnight_blue",
+      "light": "cursor_midnight_blue"
+    },
+    "secondary": {
+      "dark": "cursor_midnight_br_purple",
+      "light": "cursor_midnight_br_purple"
+    },
+    "accent": {
+      "dark": "cursor_midnight_br_cyan",
+      "light": "cursor_midnight_br_cyan"
+    },
+    "error": {
+      "dark": "cursor_midnight_red",
+      "light": "cursor_midnight_red"
+    },
+    "warning": {
+      "dark": "cursor_midnight_yellow",
+      "light": "cursor_midnight_yellow"
+    },
+    "success": {
+      "dark": "cursor_midnight_green",
+      "light": "cursor_midnight_green"
+    },
+    "info": {
+      "dark": "cursor_midnight_blue",
+      "light": "cursor_midnight_blue"
+    },
+    "text": {
+      "dark": "cursor_midnight_fg",
+      "light": "cursor_midnight_bg"
+    },
+    "textMuted": {
+      "dark": "cursor_midnight_br_black",
+      "light": "cursor_midnight_br_black"
+    },
+    "background": {
+      "dark": "cursor_midnight_bg",
+      "light": "cursor_midnight_bg"
+    },
+    "backgroundPanel": {
+      "dark": "cursor_midnight_sel",
+      "light": "cursor_midnight_sel"
+    },
+    "backgroundElement": {
+      "dark": "cursor_midnight_black",
+      "light": "cursor_midnight_black"
+    },
+    "border": {
+      "dark": "cursor_midnight_dk_blue",
+      "light": "cursor_midnight_dk_blue"
+    },
+    "borderActive": {
+      "dark": "cursor_midnight_br_black",
+      "light": "cursor_midnight_br_black"
+    },
+    "borderSubtle": {
+      "dark": "cursor_midnight_dk_blue",
+      "light": "cursor_midnight_dk_blue"
+    },
+    "diffAdded": {
+      "dark": "cursor_midnight_green",
+      "light": "cursor_midnight_green"
+    },
+    "diffRemoved": {
+      "dark": "cursor_midnight_red",
+      "light": "cursor_midnight_red"
+    },
+    "diffContext": {
+      "dark": "cursor_midnight_br_black",
+      "light": "cursor_midnight_br_black"
+    },
+    "diffHunkHeader": {
+      "dark": "cursor_midnight_br_black",
+      "light": "cursor_midnight_br_black"
+    },
+    "diffHighlightAdded": {
+      "dark": "cursor_midnight_green",
+      "light": "cursor_midnight_green"
+    },
+    "diffHighlightRemoved": {
+      "dark": "cursor_midnight_red",
+      "light": "cursor_midnight_red"
+    },
+    "diffAddedBg": {
+      "dark": "cursor_midnight_dk_green",
+      "light": "cursor_midnight_dk_green"
+    },
+    "diffRemovedBg": {
+      "dark": "cursor_midnight_dk_red",
+      "light": "cursor_midnight_dk_red"
+    },
+    "diffContextBg": {
+      "dark": "cursor_midnight_sel",
+      "light": "cursor_midnight_sel"
+    },
+    "diffLineNumber": {
+      "dark": "cursor_midnight_br_black",
+      "light": "cursor_midnight_br_black"
+    },
+    "diffAddedLineNumberBg": {
+      "dark": "cursor_midnight_dk_green",
+      "light": "cursor_midnight_dk_green"
+    },
+    "diffRemovedLineNumberBg": {
+      "dark": "cursor_midnight_dk_red",
+      "light": "cursor_midnight_dk_red"
+    },
+    "markdownText": {
+      "dark": "cursor_midnight_fg",
+      "light": "cursor_midnight_fg"
+    },
+    "markdownHeading": {
+      "dark": "cursor_midnight_blue",
+      "light": "cursor_midnight_blue"
+    },
+    "markdownLink": {
+      "dark": "cursor_midnight_blue",
+      "light": "cursor_midnight_blue"
+    },
+    "markdownLinkText": {
+      "dark": "cursor_midnight_green",
+      "light": "cursor_midnight_green"
+    },
+    "markdownCode": {
+      "dark": "cursor_midnight_green",
+      "light": "cursor_midnight_green"
+    },
+    "markdownBlockQuote": {
+      "dark": "cursor_midnight_br_black",
+      "light": "cursor_midnight_br_black"
+    },
+    "markdownEmph": {
+      "dark": "cursor_midnight_yellow",
+      "light": "cursor_midnight_yellow"
+    },
+    "markdownStrong": {
+      "dark": "cursor_midnight_yellow",
+      "light": "cursor_midnight_yellow"
+    },
+    "markdownHorizontalRule": {
+      "dark": "cursor_midnight_br_black",
+      "light": "cursor_midnight_br_black"
+    },
+    "markdownListItem": {
+      "dark": "cursor_midnight_blue",
+      "light": "cursor_midnight_blue"
+    },
+    "markdownListEnumeration": {
+      "dark": "cursor_midnight_cyan",
+      "light": "cursor_midnight_cyan"
+    },
+    "markdownImage": {
+      "dark": "cursor_midnight_blue",
+      "light": "cursor_midnight_blue"
+    },
+    "markdownImageText": {
+      "dark": "cursor_midnight_green",
+      "light": "cursor_midnight_green"
+    },
+    "markdownCodeBlock": {
+      "dark": "cursor_midnight_fg",
+      "light": "cursor_midnight_fg"
+    },
+    "blend": {
+      "dark": "#00000040",
+      "light": "#00000040"
+    },
+    "syntaxComment": {
+      "dark": "cursor_midnight_br_black",
+      "light": "cursor_midnight_br_black"
+    },
+    "syntaxKeyword": {
+      "dark": "cursor_midnight_purple",
+      "light": "cursor_midnight_purple"
+    },
+    "syntaxFunction": {
+      "dark": "cursor_midnight_blue",
+      "light": "cursor_midnight_blue"
+    },
+    "syntaxVariable": {
+      "dark": "cursor_midnight_red",
+      "light": "cursor_midnight_red"
+    },
+    "syntaxString": {
+      "dark": "cursor_midnight_green",
+      "light": "cursor_midnight_green"
+    },
+    "syntaxNumber": {
+      "dark": "cursor_midnight_purple",
+      "light": "cursor_midnight_purple"
+    },
+    "syntaxType": {
+      "dark": "cursor_midnight_blue",
+      "light": "cursor_midnight_blue"
+    },
+    "syntaxOperator": {
+      "dark": "cursor_midnight_blue",
+      "light": "cursor_midnight_blue"
+    },
+    "syntaxPunctuation": {
+      "dark": "cursor_midnight_fg",
+      "light": "cursor_midnight_fg"
+    }
+  }
+}

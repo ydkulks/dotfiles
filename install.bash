@@ -53,4 +53,16 @@ if ask "Link config files"; then
       ln -s "$dotfiles_path$files" "${HOME}/$files"
     fi
   done
+
+  if ask "Sync .opencode/agents" && [[ ! -L "${HOME}/.opencode/agents" ]]; then
+    mkdir -p "${HOME}/.opencode"
+    echo "$dotfiles_path.opencode/agents --> ~/.opencode/agents"
+    ln -sf "$dotfiles_path.opencode/agents" "${HOME}/.opencode/agents"
+  fi
+
+  if ask "Sync .opencode/commands" && [[ ! -L "${HOME}/.opencode/commands" ]]; then
+    mkdir -p "${HOME}/.opencode"
+    echo "$dotfiles_path.opencode/commands --> ~/.opencode/commands"
+    ln -sf "$dotfiles_path.opencode/commands" "${HOME}/.opencode/commands"
+  fi
 fi
